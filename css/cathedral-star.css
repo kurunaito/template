@@ -1,0 +1,227 @@
+
+@import url(http://fonts.googleapis.com/css?family=Exo:200);
+  
+body {
+  margin-top:20px;
+  margin-bottom:30px;
+  background-color:#fff;
+}
+
+.container,.container-fluid{
+	max-width: 760px;
+	background-color:#fff;
+	padding:10px 10px;
+}
+
+.row{
+	padding:5px;
+}
+.padding {
+	padding:5px;
+}
+.page-header {
+    margin: 20px 0px 20px;
+    border:none;
+}
+ 
+ a {
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+}
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+.lead {
+ 	font-family:  sans-serif;
+ 	font-weight: none;
+}
+
+h1{
+	margin-top:5px;
+	margin-bottom:15px;
+	font-family: 'Exo', sans-serif;
+	font-size:2.8em;
+
+}
+h2{
+	font-family: 'Exo', sans-serif;
+	font-size:26px;
+}
+
+
+#image-row .thum {
+    margin:0px;
+    padding:10px;
+    min-height: 130px;
+    border-radius: 5px;
+    border:3px #fff solid;
+    overflow: hidden;
+	background-color:#EEEEEE;	
+	position:relative;
+}
+#image-row  .block{
+        display:block;
+        word-break:break-all;
+        line-height:1.6em;
+		padding:20px 5px;
+		font-size:0.9em;
+}
+
+.effect .mask {
+   position:absolute;
+   opacity: 0;
+   top:0;
+   bottom:0;
+   left:0;
+   right:0;
+   overflow:visible;
+   padding:20px;
+   color:#fff;
+   background-color: rgba(0,0,0,0.7);
+   -webkit-transition: all 0.4s ease-in-out;
+   -moz-transition: all 0.4s ease-in-out;
+   -o-transition: all 0.4s ease-in-out;
+   -ms-transition: all 0.4s ease-in-out;
+   transition: all 0.4s ease-in-out;
+}
+.effect a {
+   position:absolute;
+   top:-10px;
+   color:#fff;
+   opacity: 0;
+   -webkit-transition: opacity 0.5s 0s ease-in-out;
+   -moz-transition: opacity 0.5s 0s ease-in-out;
+   -o-transition: opacity 0.5s 0s ease-in-out;
+   -ms-transition: opacity 0.5s 0s ease-in-out;
+   transition: opacity 0.5s 0s ease-in-out;
+}
+.effect:hover .mask {
+   opacity: 0.85;
+   background-color: rgba(0,0,0,0.7);
+}
+.effect:hover a {
+	opacity:1;
+	-moz-transition-delay: 0.3s;
+	-webkit-transition-delay: 0.3s;
+	-o-transition-delay: 0.3s;
+	-ms-transition-delay: 0.3s;
+	transition-delay: 0.3s;
+}
+
+
+#infscr-loading { text-align: center; }
+
+#footer {
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+  text-align:right;
+  font-size:0.5em;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+
+/* Customize the nav-justified links to be fill the entire space of the .navbar */
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+}
+
+.navbar-toggle {
+    float: none;
+    margin-top:-10px;
+    margin-bottom:20px;
+    margin-right:0px;
+  }
+
+.nav-justified {
+  background-color: transparent;
+  border-radius: 8px;
+  border: 0px solid #AFAFAF;
+    margin-bottom:20px;
+}
+
+
+.nav-justified > li > a {
+	font-family: 'Exo', sans-serif;
+  font-size:22px;
+  padding-top: 4px;
+  margin-right:0px;
+  padding-bottom: 3px;
+  color: #4F4F4F;
+  text-align: center;
+  border-bottom: 0px solid #fff;
+  background-color: transparent; /* Old browsers */
+ 
+}
+.nav-justified > .active > a,
+.nav-justified > .active > a:hover,
+.nav-justified > .active > a:focus {
+  background-color: none;
+
+}
+.nav-justified > li:first-child > a {
+  border-radius: 5px 5px 0 0;
+}
+.nav-justified > li:last-child > a {
+  border-bottom: 0;
+  border-radius: 0 0 5px 5px;
+}
+
+@media (max-width:768px){
+.nav-justified  .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0px;
+    background-color: transparent;
+    border: 0px none;
+    box-shadow: none;
+}
+.nav-justified  > li > .dropdown-menu {
+    margin-top: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+.open > .dropdown-menu {
+    display: block;
+}
+}
+
+@media (min-width: 768px) {
+  .nav-justified {
+    max-height: 52px;
+  }
+  .nav-justified > li > a {
+    border-left: 1px solid #fff;
+    border-right: 1px solid #d5d5d5;
+  }
+  .nav-justified > li:first-child > a {
+    border-left: 0;
+    border-radius: 5px 0 0 5px;
+  }
+  .nav-justified > li:last-child > a {
+    border-radius: 0 5px 5px 0;
+    border-right: 0;
+  }
+}
+
+
+
+
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .masthead,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
