@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<!--
+	Thank you very much for Downloading !
+	This Theme for every Fujoshi.
+	
+	Theme name : Cathedral-Star
+	
+	Theme design by tatsuhara (@tatuhara)
+	http://triste.undo.jp/
+-->
+
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml">
+<head>
+	<meta name="robots" content="noindex,nofollow"> 
+	<title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+
+	<meta charset="UTF-8">
+	
+	<!-- icon rss iphone-icon -->
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+	<link rel="apple-touch-icon" href="{PortraitURL-128}">
+	<link rel="canonical" href="{Permalink}"/>
+  
+	<!-- Responsive Design CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Default Design CSS -->
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href ="https://gist.githubusercontent.com/273c/9c96705f53f919e2c789/raw/cathedral-star.css">	
+
+	<!-- Default Design jquery -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="http://www.infinite-scroll.com/wp-content/plugins/infinite-scroll/jquery.infinitescroll.js"></script>
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	
+	<!-- Template Mode Change -->
+	<meta name="if:Show Archive link" content="1">
+	<meta name="if:Show Random link" content="0">
+	<meta name="if:Show RSS link" content="0">
+	
+	<!-- Design custom -->
+	<meta name="image:Background-image" content="" />
+	<meta name="color:Background-color" content="" />
+	<meta name="image:Header" content="" />
+	
+	<!-- User info -->
+	<meta name="if:Show User Info" content="1">
+	<meta name="text:Your Name" content=""/>
+	<meta name="text:Your Profile" content=""/>	
+	
+	<!-- User SNS -->
+	<meta name="if:Show User SNS" content="1">
+	<meta name="text:Your Twitter Username" content=""/>
+	<meta name="text:Your Website" content=""/>
+	<meta name="text:Your OtherSNS link" content=""/>
+
+
+
+	<!-- analytics -->
+	<meta name="text:Google Analytics ID" content="UA-000000-00" />
+
+
+  <style type="text/css">
+	body {
+ 	background-image:url("{image:Background-image}");
+	background-color:{color:Background-color};
+	}
+    {CustomCSS}
+  </style>
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '{text:Google Analytics ID}']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <!-- END Google Analytics -->
+  
+</head>
+<body>
+
+<div class="container container-fluid img-rounded">
+
+<!-- Header-image or title -->
+	{block:IfHeaderImage}
+	<img src="{image:Header}" class="img-rounded img-responsive center-block">
+	{/block:IfHeaderImage}
+	
+     {block:IfNotHeaderImage}
+      <div class="page-header text-center">
+      	<h1>{Title}</h1>
+      	{block:Description}<small>{Description}</small>{/block:Description}
+      </div>
+      {/block:IfNotHeaderImage}
+<!-- END Header-image or title -->
+
+
+<!-- Navigation -->
+    <!-- Responsive toggle -->
+    <div class="navbar-header text-center">
+    	<a class="btn btn-default btn-sm navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars fa-lg"></i></a>
+    	<BR>
+    </div>
+  
+	<!-- navigation bar -->
+	<div class="collapse navbar-collapse" id="navbar-collapse">
+	<ul class="nav nav-justified">
+		<li><a href="/" >Home</a></li>
+		 {block:IfShowUserInfo}
+		 <li><a href="#" data-toggle="collapse" data-target="#info">Info</a></li>
+		 {/block:IfShowUserInfo}
+		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contents <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				{block:IfShowArchivelink}<li><a href="/archive">Archive</a></li>{/block:IfShowArchivelink}
+				{block:IfShowRandomlink}<li><a href="/random">Random</a></li>{/block:IfShowRandomlink}
+				{block:IfShowRSSlink}<li><a href="{RSS}">RSS</a></li>{/block:IfShowRSSlink}
+				{block:HasPages} <!--　Free Page List -->
+				<li class="divider"></li>
+				{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+				 {/block:HasPages}
+			</ul>
+			</li>
+		{block:HasTags}
+		<li><a href="#" data-toggle="collapse" data-target="#tags">Tags</a></li>
+		{/block:HasTags}
+		{block:SubmissionsEnabled}<li><a href="/submit">Submit</a></li>{/block:SubmissionsEnabled}
+        </ul>
+		</div>
+<!-- END Navigation -->
+
+<!-- Info -->
+{block:IfShowUserInfo}
+	<div class="row collapse" id="info">
+	<div class="col-lg-3" align="center">
+		<a href="/"><img src="{PortraitURL-128}" class="img-rounded" width="110"></a><BR><BR>
+			{block:IfShowUserSNS}
+			<div class="btn-group">
+  				{block:IfYourTwitterUsername}<a class="btn btn-default" href="https://twitter.com/{text:YourTwitterUsername}"><i class="fa fa-twitter  fa-lg"></i></a>{/block:IfYourTwitterUsername}
+ 				{block:IfYourWebsite}<a class="btn btn-default" href="{text:YourWebsite}"><i class="fa fa-home fa-lg"></i></a>{/block:IfYourWebsite}
+  				{block:IfYourOtherSNSlink}<a class="btn btn-default" href="{text:YourOtherSNSlink}"><i class="fa fa-link fa-lg"></i></a>{/block:IfYourOtherSNSlink}
+			</div>
+			<BR><BR>
+			{/block:IfShowUserSNS}
+			</div> 
+       <div class="col-lg-9">
+       	{block:IfYourName}<i class="icon icon-user icon-large"></i> {text:YourName}{/block:IfYourName}<BR>
+		{block:IfYourProfile}{text:YourProfile}{/block:IfYourProfile}
+       </div>
+	</div>
+{/block:IfShowUserInfo}  
+<!-- END Info -->
+
+<!-- Start #tags -->
+{block:TagPage}
+	<div class="row collapse" id="tags">
+		<ol class="breadcrumb well">
+		<!--Tumblr Tag Cloud-->
+		<script type="text/javascript" src="http://static.tumblr.com/zpgybcc/Neelpcziw/tumblr.min.js?minsize=100&maxsize=100&css=default&order=alphabetical"></script>
+		</ol>
+	</div>
+{/block:TagPage}
+<!-- End #tags --> 
+
+
+{block:IndexPage}
+
+<!-- Start Post -->
+	<div class="row text-center" id="image-row">
+		<div class="col-lg-12 text-center">
+	{block:Posts}	
+	
+		{block:Text}
+			<a href="{Permalink}" class="col-xs-12 col-sm-4  thum effect" id="post">
+				<div class="block">
+					<i class="fa fa-file-text-o fa-3x"></i><BR>
+					<small>
+					{block:Title}{Title}{/block:Title}
+					{block:IfNotTitleText}non title{/block:IfNotTitleText}
+					</small>
+				</div>
+			</a>
+		{/block:Text}
+		
+		{block:Photo}
+			<a href="{Permalink}" class="col-xs-12 col-sm-4 thum effect" style="background: url('{PhotoURL-400}') no-repeat scroll center transparent" id="post" target="_top">
+				<div class="mask">
+				<i class="fa fa-search fa-lg"></i><BR>
+					{block:Date}
+					{block:NewDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
+					{block:SameDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
+					{/block:Date} <BR>
+					{block:NoteCount}<i class="fa fa-star "></i> {NoteCount} Notes{/block:NoteCount}
+			</div> </a>
+		{/block:Photo}
+		
+		{block:Photoset}
+			<a href="{Permalink}" class="col-xs-12 col-sm-4 thum effect" style="background: url('{Photoset-400}') no-repeat scroll center transparent" id="post" target="_top">
+				<div class="text-left text-muted"><i class="fa fa-files-o fa-lg"></i></div>
+				<div class="mask">
+				<i class="fa fa-search fa-lg"></i><BR>
+					{block:Date}
+					{block:NewDayDate{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
+					{block:SameDayDate{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
+					{/block:Date} <BR>
+					{block:NoteCount}<i class="fa fa-star "></i> {NoteCount} Notes{/block:NoteCount}
+			</div> </a>
+		{/block:Photoset}
+		
+		{block:Quote}
+			<a href="{Permalink}" class="col-xs-12 col-sm-4  thum effect" id="post">
+				<div class="block">
+					<i class="fa fa-quote-left fa-3x"></i><BR>
+					<small>Quote<BR>
+					{block:Date}
+					{block:NewDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
+					{block:SameDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
+					{/block:Date} <BR>
+					{block:NoteCount}<i class="fa fa-star "></i> {NoteCount} Notes{/block:NoteCount}
+					</small>
+				</div>
+			</a>
+		{/block:Quote}
+		
+		{block:Link}
+			<a href="{URL}" class="col-xs-12 col-sm-4  thum effect" id="post">
+				<div class="block">
+					<i class="fa fa-link fa-3x"></i><BR>
+					<small>Link<BR>
+						{Name}</small>
+				</div>
+			</a>
+		{/block:Link}
+		
+		{block:RebloggedFrom}
+			<a href="{ReblogParentURL}" class="col-xs-12 col-sm-4  thum effect" id="post">
+				<div class="block">
+					<i class="fa fa-retweet fa-3x"></i><BR>
+					<small>Reblog<BR>
+						{ReblogParentTitle}<BR>
+						{ReblogParentName}
+					</small>
+				</div>
+			</a>
+		{/block:RebloggedFrom}
+		
+		{block:Chat}
+			<a href="{Permalink}" class="col-xs-12 col-sm-4  thum effect" id="post">
+				<div class="block">
+					<i class="fa fa-comments fa-3x"></i><BR>
+					<small>Chat
+					{block:Title}<BR>{Title}{/block:Title}
+					</small>
+				</div>
+			</a>
+		{/block:Chat}
+		
+		{block:Audio}
+			<a href="{Permalink}" class="col-xs-12 col-sm-4  thum effect" id="post">
+				<div class="block">
+					<i class="fa fa-headphones fa-3x"></i><BR>
+					<small>Audio
+					{block:TrackName}<BR>{TrackName}{/block:TrackName}
+					</small>
+				</div>
+			</a>
+		{/block:Audio}
+		
+		{block:Video}
+			<a href="{Permalink}" class="col-xs-12 col-sm-4  thum effect" id="post">
+				<div class="block">
+					<i class="fa fa-youtube-play fa-3x"></i><BR>
+					<small>Video<BR>
+						{PostID}
+					</small>
+				</div>
+			</a>
+		{/block:Video}
+		
+		{/block:Posts}		
+		</div>
+	</div>
+<!-- End Post --> 
+
+<!-- Index Page Pagination -->
+	{block:Pagination}
+	<ul class="pager">
+		<!-- infinity scroll -->
+		<a href="{NextPage}" id="scroll"><button type="button" class="btn btn-default btn-lg btn-block hidden-sm hidden-xs" style="border:none;" ><i class="fa fa-angle-double-down"></i> more</button></a> 
+ 		<!-- normal pager -->
+ 		{block:PreviousPage}<li class="previous visible-sm visible-xs"><a href="{PreviousPage}">&larr; Older</a></li>{/block:PreviousPage}
+		{block:NextPage}<li class="next visible-sm visible-xs"><a href="{NextPage}">Newer &rarr;</a></li>{/block:NextPage}
+	</ul>
+	{/block:Pagination}
+	
+
+{/block:IndexPage}
+
+
+{block:PermalinkPage}
+
+<!-- Start Post-text-NomalList -->
+	<div class="row">
+	
+	{block:Posts}
+	<div class="col-lg-12">
+		
+		<div class="page-header">
+  		<h2> <small>海の底は君より深い</small></h2>
+		</div>
+		
+		<p class="text-right">
+			<small>2014/02/20</small>
+		</p>
+		
+			大きな水槽を前に、嶺二がぼんやりと水の合間を見つめている。<br>
+ボクはそれを横目にひらひらと泳ぐ魚を追う。誰も気づかない、水曜日の午後。平日ということもあって水族館には殆ど人がいなかった。だからといって変装しないでいいわけがない。ボクは帽子を。嶺二は眼鏡をかけて、髪を束ねている。<br>
+分厚いガラス越しに広がる海の世界に、嶺二は魅入られているようだった。<br>
+「綺麗だよね。よく見える」<br>
+「
+
+		<BR><BR>
+			
+		<!-- like and note and tag -->
+		<p class="text-right visible-lg visible-md"><a data-toggle="collapse" data-target="#set1"><i class="fa fa-cog fa-lg"></i></a></p>
+			<ol class="breadcrumb collapse text-right" id="set1">
+				<li><a href="#"><i class="fa fa-heart "></i>Like</a></li>
+				<li><a href="#"><i class="fa fa-star "></i>note</a></li>
+				<li><a href="#">#tag</a></li>
+			</ol>
+			<ol class="breadcrumb collapse text-right visible-sm visible-xs" id="set1">
+				<li><a href="#"><i class="fa fa-heart "></i>Like</a></li>
+				<li><a href="#"><i class="fa fa-star "></i>note</a></li>
+				<li><a href="#">#tag</a></li>
+			</ol>
+			
+		</div><!-- END col-lg-12 -->
+		<BR><BR>
+ {/block:Posts}
+ 
+	</div>
+<!-- End Post-text-NormalList --> 
+
+{/block:PermalinkPage}
+
+
+
+
+<!-- Footer. please do not delete. --> 
+    <footer id="footer" class="text-right">
+      <a href="" target="_blank">Cathedral-Star</a> designed by <a href="http://triste.undo.jp/" target="_blank">-273℃</a>
+    </footer>
+    
+  </div>      <!-- End Container -->
+
+
+
+<script type="text/javascript">
+$(function(){
+    $('#image-row').infinitescroll({
+        navSelector  : "ul.pager",
+            // ナビゲーション要素を指定します。
+        nextSelector : "ul.pager a#scroll",
+            // ナビゲーションの「次へ」の要素を指定します。
+        itemSelector : "#image-row div#post",
+            // 表示させる要素を指定します。
+       loading: {
+        msgText: "<em>読み込み中の文書はここを書き換える</em>"
+    }
+    });
+    
+$(window).unbind('.infscr'); $('a#scroll').click(function(){ $(document).trigger('retrieve.infscr'); return false; });
+
+});
+</script>
+</body>
+
