@@ -1,21 +1,22 @@
-// インスタンスを生成
-var myTumblrPosts = new TumblrPosts();
 
-// 読み込み完了時のイベントハンドラを設定
-myTumblrPosts.on("complete", function(){
-    var $ul, tags;
+   $(function() {
+	var myTumblrPosts = new TumblrPosts();
 
-    // getTags() : タグリストを取得
-    tags = this.getTags();
-    $ul = $("<ul>");
-    $.each(tags, function(i, tag){
-        $ul.append(
-            $("<li>").text(tag.name + " (" + tag.count + ")")
-        );
-    });
+	myTumblrPosts.config({
+		domain : location.host, 
+		maxNum : 300
+	});
 
-    $ul.appendTo( $("ul#tagcloud") );
-});
+	myTumblrPosts.on("complete", function(){
+		var tags;
+	tags = this.getTags();
 
-// 読み込みを開始
+	$.each(tags, function(i, tag){
+		var n='<li><a href="/tagged/' + tag.name + '">' + tag.name + "</a></li>";
+	$(n).appendTo( $("#tagcloud")
+	)})
+	});
+
 myTumblrPosts.run();
+
+    })();
