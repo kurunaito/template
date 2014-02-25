@@ -908,16 +908,3 @@ myTumblrPosts.run();
 
     })();
  
-$(function(){ 
-$('#postblock').infinitescroll({
-        navSelector  : 'ul.pager',
-        nextSelector : 'ul.pager a#scroll',
-        itemSelector : '#postblock a#post',
-        behavior     : 'twitter',
-        loading: {
-          finishedMsg: "end posts",
-          img: '',
-          msgText: ""
-        }
-    });   
-});
