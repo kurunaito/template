@@ -171,25 +171,6 @@ h2{
   border-radius: 0 0 5px 5px;
 }
 
-@media (max-width:768px){
-.nav-justified  .open .dropdown-menu {
-    position: static;
-    float: none;
-    width: auto;
-    margin-top: 0px;
-    background-color: transparent;
-    border: 0px none;
-    box-shadow: none;
-}
-.nav-justified  > li > .dropdown-menu {
-    margin-top: 0px;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-}
-.open > .dropdown-menu {
-    display: block;
-}
-}
 
 @media (min-width: 768px) {
   .nav-justified {
