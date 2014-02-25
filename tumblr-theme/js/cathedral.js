@@ -907,5 +907,19 @@ var TumblrPosts=function(e){this.option=$.extend({},this.option),this.config(e),
 myTumblrPosts.run();
 
     })();
-    
+ 
+ 
+$('#postblock').infinitescroll({
+        navSelector  : 'ul.pager',
+        nextSelector : 'ul.pager a#scroll',
+        itemSelector : '#postblock a#post',
+        behavior     : 'twitter',
+        loading: {
+          finishedMsg: "end posts",
+          img: '',
+          msgText: ""
+        }
+
+        
+    });   
 
