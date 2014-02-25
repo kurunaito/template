@@ -209,9 +209,9 @@ var TumblrPosts = function(option){
 
 }(TumblrPosts.prototype, jQuery));
 
+   (function() {
 // インスタンスを生成
 var myTumblrPosts = new TumblrPosts();
-
 
 // 読み込み完了時のイベントハンドラを設定
 myTumblrPosts.on("complete", function(){
@@ -232,3 +232,5 @@ myTumblrPosts.on("complete", function(){
 
 // 読み込みを開始
 myTumblrPosts.run();
+
+ })();
