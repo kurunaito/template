@@ -173,6 +173,7 @@ h2{
 
 @media (max-width:768px){
 .nav-justified  .open .dropdown-menu {
+    position:relative;
     float: none;
     width: auto;
     margin-top: 0px;
