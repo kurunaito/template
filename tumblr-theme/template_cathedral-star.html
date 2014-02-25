@@ -17,69 +17,46 @@
 
 	<meta charset="UTF-8">
 	
-	<!-- icon rss iphone-icon -->
 	<link rel="shortcut icon" href="{Favicon}">
 	<link rel="alternate" type="application/rss+xml" href="{RSS}">
 	<link rel="apple-touch-icon" href="{PortraitURL-128}">
 	<link rel="canonical" href="{Permalink}"/>
   
-	<!-- Responsive Design CSS -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Default Design CSS -->
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" >
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	<link rel="stylesheet" href ="https://gist.githubusercontent.com/273c/9c96705f53f919e2c789/raw/cathedral-star.css">	
-
-	<!-- Default Design jquery -->
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-	<script type="text/javascript" src="http://www.infinite-scroll.com/wp-content/plugins/infinite-scroll/jquery.infinitescroll.js"></script>
-	
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-	
-	<!-- Template Mode Change -->
 	<meta name="if:Show Archive link" content="1">
 	<meta name="if:Show Random link" content="0">
 	<meta name="if:Show RSS link" content="0">
-	
-	<!-- Design custom -->
-	<meta name="image:Background-image" content="" />
-	<meta name="color:Background-color" content="" />
+
+	<meta name="image:Background" content=""/>
+	<meta name="color:Background" content="#fff"/>
 	<meta name="image:Header" content="" />
+	<meta name="if:Delete tumblr controls" content="0">
+	<meta name="if:Permalink Reblog Button" content="1">	
 	
-	<!-- User info -->
 	<meta name="if:Show User Info" content="1">
 	<meta name="text:Your Name" content=""/>
 	<meta name="text:Your Profile" content=""/>	
-	
-	<!-- User SNS -->
+
 	<meta name="if:Show User SNS" content="1">
 	<meta name="text:Your Twitter Username" content=""/>
 	<meta name="text:Your Website" content=""/>
 	<meta name="text:Your OtherSNS link" content=""/>
 
-
-
-	<!-- analytics -->
 	<meta name="text:Google Analytics ID" content="UA-000000-00" />
 
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href ="http://273c.github.io/template/tumblr-theme/css/cathedral-star.css" rel="stylesheet">
+	
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript" ></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-  <style type="text/css">
-	body {
- 	background-image:url("{image:Background-image}");
-	background-color:{color:Background-color};
-	}
-    {CustomCSS}
-  </style>
-
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
   <!-- Google Analytics -->
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -95,12 +72,25 @@
   
 </head>
 <body>
+	
+ <style type="text/css">
+	body {
+ 		  background-image: url('{image:Background}');
+ 		  background-color:{color:Background} ;
+	}
 
+    {block:IfDeletetumblrcontrols}
+    iframe#tumblr_controls {display:none};
+    {/block:IfDeletetumblrcontrols}
+    
+    {CustomCSS}
+  </style>
+  
 <div class="container container-fluid img-rounded">
 
 <!-- Header-image or title -->
 	{block:IfHeaderImage}
-	<img src="{image:Header}" class="img-rounded img-responsive center-block">
+	<img src="{image:Header}" class="img-rounded img-responsive center-block"><BR>
 	{/block:IfHeaderImage}
 	
      {block:IfNotHeaderImage}
@@ -122,12 +112,12 @@
 	<!-- navigation bar -->
 	<div class="collapse navbar-collapse" id="navbar-collapse">
 	<ul class="nav nav-justified">
-		<li><a href="/" >Home</a></li>
+		<li class="hidden-sm hidden-xs"><a href="/" >Home</a></li>
 		 {block:IfShowUserInfo}
 		 <li><a href="#" data-toggle="collapse" data-target="#info">Info</a></li>
 		 {/block:IfShowUserInfo}
 		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contents <b class="caret"></b></a>
-			<ul class="dropdown-menu">
+			<ul class="dropdown-menu" role="menu">
 				{block:IfShowArchivelink}<li><a href="/archive">Archive</a></li>{/block:IfShowArchivelink}
 				{block:IfShowRandomlink}<li><a href="/random">Random</a></li>{/block:IfShowRandomlink}
 				{block:IfShowRSSlink}<li><a href="{RSS}">RSS</a></li>{/block:IfShowRSSlink}
@@ -137,9 +127,7 @@
 				 {/block:HasPages}
 			</ul>
 			</li>
-		{block:HasTags}
 		<li><a href="#" data-toggle="collapse" data-target="#tags">Tags</a></li>
-		{/block:HasTags}
 		{block:SubmissionsEnabled}<li><a href="/submit">Submit</a></li>{/block:SubmissionsEnabled}
         </ul>
 		</div>
@@ -152,165 +140,156 @@
 		<a href="/"><img src="{PortraitURL-128}" class="img-rounded" width="110"></a><BR><BR>
 			{block:IfShowUserSNS}
 			<div class="btn-group">
-  				{block:IfYourTwitterUsername}<a class="btn btn-default" href="https://twitter.com/{text:YourTwitterUsername}"><i class="fa fa-twitter  fa-lg"></i></a>{/block:IfYourTwitterUsername}
- 				{block:IfYourWebsite}<a class="btn btn-default" href="{text:YourWebsite}"><i class="fa fa-home fa-lg"></i></a>{/block:IfYourWebsite}
-  				{block:IfYourOtherSNSlink}<a class="btn btn-default" href="{text:YourOtherSNSlink}"><i class="fa fa-link fa-lg"></i></a>{/block:IfYourOtherSNSlink}
+  				{block:IfYourTwitterUsername}<a class="btn btn-default" href="https://twitter.com/{text:Your Twitter Username}"><i class="fa fa-twitter  fa-lg"></i></a>{/block:IfYourTwitterUsername}
+ 				{block:IfYourWebsite}<a class="btn btn-default" href="{text:Your Website}"><i class="fa fa-home fa-lg"></i></a>{/block:IfYourWebsite}
+  				{block:IfYourOtherSNSlink}<a class="btn btn-default" href="{text:Your OtherSNS link}"><i class="fa fa-link fa-lg"></i></a>{/block:IfYourOtherSNSlink}
 			</div>
-			<BR><BR>
+			<BR>
 			{/block:IfShowUserSNS}
 			</div> 
-       <div class="col-lg-9">
-       	{block:IfYourName}<i class="icon icon-user icon-large"></i> {text:YourName}{/block:IfYourName}<BR>
-		{block:IfYourProfile}{text:YourProfile}{/block:IfYourProfile}
+       <div class="col-lg-8">
+       	{block:IfYourName}<i class="fa fa-user fa-lg"></i> {text:Your Name}{/block:IfYourName}<BR><BR>
+		{text:Your Profile}
        </div>
 	</div>
 {/block:IfShowUserInfo}  
 <!-- END Info -->
 
 <!-- Start #tags -->
-{block:TagPage}
 	<div class="row collapse" id="tags">
-		<ol class="breadcrumb well">
+		<ol class="breadcrumb well" id="tagcloud">
 		<!--Tumblr Tag Cloud-->
-		<script type="text/javascript" src="http://static.tumblr.com/zpgybcc/Neelpcziw/tumblr.min.js?minsize=100&maxsize=100&css=default&order=alphabetical"></script>
+		    
 		</ol>
 	</div>
-{/block:TagPage}
 <!-- End #tags --> 
 
 
 {block:IndexPage}
-
+<BR>
+	{block:TagPage}
+		<h2><i class="fa fa-tag"></i>　{Tag}</h2>
+	{/block:TagPage}
+        
 <!-- Start Post -->
 	<div class="row text-center" id="image-row">
-		<div class="col-lg-12 text-center">
+		<div class="col-lg-12 text-center" id="postblock">
+			
 	{block:Posts}	
 	
+	<a href="{Permalink}" id="post" class="col-xs-12 col-sm-4 thum effect"{block:Photo} style="background: url('{PhotoURL-400}') no-repeat scroll center transparent"{/block:Photo}
+	{block:Photoset}{block:Photos} style="background: url('{PhotoURL-400}') no-repeat scroll center transparent"{/block:Photos}{/block:Photoset}>
+
+		{block:Photoset}
+		<div class="text-left text-muted"><i class="fa fa-files-o fa-lg"> </i></div>
+		{/block:Photoset}
+		
+		{block:RebloggedFrom}
+		<div class="text-left text-muted">
+			<i class="fa fa-retweet fa-lg"></i>　<small>{ReblogParentTitle}</small>
+		</div>
+		{/block:RebloggedFrom}
+
 		{block:Text}
-			<a href="{Permalink}" class="col-xs-12 col-sm-4  thum effect" id="post">
-				<div class="block">
-					<i class="fa fa-file-text-o fa-3x"></i><BR>
-					<small>
-					{block:Title}{Title}{/block:Title}
-					{block:IfNotTitleText}non title{/block:IfNotTitleText}
-					</small>
-				</div>
-			</a>
+		<div class="block">
+			<i class="fa fa-file-text-o fa-2x"></i><BR>
+			<small>
+				{block:Title}{Title}{/block:Title}
+				{block:IfNotTitleText}non title{/block:IfNotTitleText}
+			</small>
+		</div>
 		{/block:Text}
 		
 		{block:Photo}
-			<a href="{Permalink}" class="col-xs-12 col-sm-4 thum effect" style="background: url('{PhotoURL-400}') no-repeat scroll center transparent" id="post" target="_top">
-				<div class="mask">
-				<i class="fa fa-search fa-lg"></i><BR>
-					{block:Date}
-					{block:NewDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
-					{block:SameDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
-					{/block:Date} <BR>
-					{block:NoteCount}<i class="fa fa-star "></i> {NoteCount} Notes{/block:NoteCount}
-			</div> </a>
+		<div class="mask">
+			<i class="fa fa-search fa-lg"></i><BR>
+			{block:Date}
+				{block:NewDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
+				{block:SameDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
+			{/block:Date} <BR>
+			{block:NoteCount}<i class="fa fa-star "></i> {NoteCount} Notes{/block:NoteCount}
+			</div>
 		{/block:Photo}
 		
 		{block:Photoset}
-			<a href="{Permalink}" class="col-xs-12 col-sm-4 thum effect" style="background: url('{Photoset-400}') no-repeat scroll center transparent" id="post" target="_top">
-				<div class="text-left text-muted"><i class="fa fa-files-o fa-lg"></i></div>
-				<div class="mask">
-				<i class="fa fa-search fa-lg"></i><BR>
-					{block:Date}
-					{block:NewDayDate{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
-					{block:SameDayDate{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
-					{/block:Date} <BR>
-					{block:NoteCount}<i class="fa fa-star "></i> {NoteCount} Notes{/block:NoteCount}
-			</div> </a>
+		<div class="mask">
+			<i class="fa fa-search fa-lg"></i><BR>
+			{block:Date}
+				{block:NewDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
+				{block:SameDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
+			{/block:Date} <BR>
+			{block:NoteCount}<i class="fa fa-star "></i> {NoteCount} Notes{/block:NoteCount}
+			</div>
 		{/block:Photoset}
 		
 		{block:Quote}
-			<a href="{Permalink}" class="col-xs-12 col-sm-4  thum effect" id="post">
-				<div class="block">
-					<i class="fa fa-quote-left fa-3x"></i><BR>
-					<small>Quote<BR>
-					{block:Date}
-					{block:NewDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
-					{block:SameDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
-					{/block:Date} <BR>
-					{block:NoteCount}<i class="fa fa-star "></i> {NoteCount} Notes{/block:NoteCount}
-					</small>
-				</div>
-			</a>
+		<div class="block">
+			<i class="fa fa-quote-left fa-2x"></i><BR>
+			<small>Quote<BR>
+			{block:Date}
+				{block:NewDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
+				{block:SameDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
+			{/block:Date}
+			</small>
+		</div>
 		{/block:Quote}
 		
 		{block:Link}
-			<a href="{URL}" class="col-xs-12 col-sm-4  thum effect" id="post">
-				<div class="block">
-					<i class="fa fa-link fa-3x"></i><BR>
-					<small>Link<BR>
-						{Name}</small>
-				</div>
-			</a>
+		<div class="block">
+			<i class="fa fa-link fa-2x"></i><BR>
+			<small>{Name}</small>
+		</div>
 		{/block:Link}
 		
-		{block:RebloggedFrom}
-			<a href="{ReblogParentURL}" class="col-xs-12 col-sm-4  thum effect" id="post">
-				<div class="block">
-					<i class="fa fa-retweet fa-3x"></i><BR>
-					<small>Reblog<BR>
-						{ReblogParentTitle}<BR>
-						{ReblogParentName}
-					</small>
-				</div>
-			</a>
-		{/block:RebloggedFrom}
-		
 		{block:Chat}
-			<a href="{Permalink}" class="col-xs-12 col-sm-4  thum effect" id="post">
-				<div class="block">
-					<i class="fa fa-comments fa-3x"></i><BR>
-					<small>Chat
-					{block:Title}<BR>{Title}{/block:Title}
-					</small>
-				</div>
-			</a>
+		<div class="block">
+			<i class="fa fa-comments fa-2x"></i><BR>
+			<small>Chat<BR>{block:Title}{Title}{/block:Title}
+			</small>
+		</div>
 		{/block:Chat}
 		
 		{block:Audio}
-			<a href="{Permalink}" class="col-xs-12 col-sm-4  thum effect" id="post">
-				<div class="block">
-					<i class="fa fa-headphones fa-3x"></i><BR>
-					<small>Audio
-					{block:TrackName}<BR>{TrackName}{/block:TrackName}
-					</small>
-				</div>
-			</a>
+		<div class="block">
+			<i class="fa fa-headphones fa-2x"></i><BR>
+			<small>Audio<BR>
+				{block:TrackName}{TrackName}{/block:TrackName}
+			</small>
+		</div>
 		{/block:Audio}
 		
 		{block:Video}
-			<a href="{Permalink}" class="col-xs-12 col-sm-4  thum effect" id="post">
-				<div class="block">
-					<i class="fa fa-youtube-play fa-3x"></i><BR>
-					<small>Video<BR>
-						{PostID}
-					</small>
-				</div>
-			</a>
+		<div class="block">
+			<i class="fa fa-youtube-play fa-2x"></i><BR>
+			<small>Video<BR>{PostID}</small>
+		</div>
 		{/block:Video}
 		
+		</a>
 		{/block:Posts}		
 		</div>
 	</div>
 <!-- End Post --> 
 
 <!-- Index Page Pagination -->
+
 	{block:Pagination}
 	<ul class="pager">
 		<!-- infinity scroll -->
-		<a href="{NextPage}" id="scroll"><button type="button" class="btn btn-default btn-lg btn-block hidden-sm hidden-xs" style="border:none;" ><i class="fa fa-angle-double-down"></i> more</button></a> 
+		{block:NextPage}
+		<a href="{NextPage}" id="scroll">
+		<button type="button" class="btn btn-default btn-lg btn-block hidden-sm hidden-xs" style="border:none;font-size: 16px;" >
+			<i class="fa fa-angle-double-down"></i> more</button>
+		</a>
+		{/block:NextPage}
  		<!-- normal pager -->
  		{block:PreviousPage}<li class="previous visible-sm visible-xs"><a href="{PreviousPage}">&larr; Older</a></li>{/block:PreviousPage}
 		{block:NextPage}<li class="next visible-sm visible-xs"><a href="{NextPage}">Newer &rarr;</a></li>{/block:NextPage}
 	</ul>
 	{/block:Pagination}
 	
-
 {/block:IndexPage}
+
 
 
 {block:PermalinkPage}
@@ -320,39 +299,147 @@
 	
 	{block:Posts}
 	<div class="col-lg-12">
-		
 		<div class="page-header">
-  		<h2> <small>海の底は君より深い</small></h2>
+			
+  		<h4>
+  			{block:Text}
+  				{block:Title}{Title}{/block:Title}
+  				{block:IfNotTitleText}non title{/block:IfNotTitleText}
+  			{/block:Text}
+  			{block:Photo}<i class="fa fa-picture-o fa-lg"></i>{/block:Photo}
+  			{block:Photoset}<i class="fa fa-files-o fa-lg"></i>{/block:Photoset}
+  			{block:Quote}<i class="fa fa-quote-left fa-lg"></i> Quote{/block:Quote}
+  			{block:Link}<i class="fa fa-link fa-lg"></i>　Link{/block:Link}
+  			{block:Chat}<i class="fa fa-comments fa-lg"></i>　{block:Title}{Title} {/block:Title}{/block:Chat}
+  			{block:Audio}<i class="fa fa-headphones fa-lg"></i>　{block:TrackName}{TrackName}{/block:TrackName}{/block:Audio}
+  			{block:Video}<i class="fa fa-youtube-play fa-lg"></i>　Video{/block:Video}
+		</h4>
 		</div>
 		
 		<p class="text-right">
-			<small>2014/02/20</small>
+			<small>
+			{block:Date}
+				{block:NewDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
+				{block:SameDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
+			{/block:Date}
+			</small>
+		<!-- like and note and tag -->
+			<a data-toggle="collapse" data-target="#set1" href="#"><i class="fa fa-plus-square"></i></a>
+			<ol class="breadcrumb collapse text-right" id="set1">
+			<ul class="list-inline">
+				<li>{LikeButton size="15"}</li>
+				{block:IfPermalinkReblogButton}
+				<li>{ReblogButton size="15"}</li>
+				{/block:IfPermalinkReblogButton}
+				{block:HasTags}{block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}{/block:HasTags}
+			</ul>
+			</ol>
 		</p>
 		
-			大きな水槽を前に、嶺二がぼんやりと水の合間を見つめている。<br>
-ボクはそれを横目にひらひらと泳ぐ魚を追う。誰も気づかない、水曜日の午後。平日ということもあって水族館には殆ど人がいなかった。だからといって変装しないでいいわけがない。ボクは帽子を。嶺二は眼鏡をかけて、髪を束ねている。<br>
-分厚いガラス越しに広がる海の世界に、嶺二は魅入られているようだった。<br>
-「綺麗だよね。よく見える」<br>
-「
+		<div class="text-center center-block col-lg-12">
+		
+		{block:Text}
+		<div class="text-left">
+				{Body}	
+		</div>
+		{/block:Text}
+		
+		{block:Photo}
+			<img src="{PhotoURL-500}" class="img-responsive center-block" max-width="680px" {block:HighRes}style="display:none"{/block:HighRes}>
+			{block:HighRes}
+				<img src="{PhotoURL-HighRes}" class="img-responsive center-block" max-width="680px">
+			{/block:HighRes}
+			{block:Caption}
+				<BR>{Caption}
+			{/block:Caption}
+		{/block:Photo}
+		
+		{block:Photoset}
+			<div class="hidden-sm hidden-xs">{Photoset}</div>
+			<div class="visible-sm visible-xs">{block:Photos}<img src="{PhotoURL-500}" class="img-responsive center-block"> {/block:Photos}</div>
+			{block:Caption}
+				<BR>{Caption}
+			{/block:Caption}
+		{/block:Photoset}
+		
+		{block:Quote}
+		<div class="text-left">
+			<blockquote>
+		 		<p>{Quote}</p>
+  			<footer>
+  				{block:Source}{Source}{/block:Source}
+  			</footer>
+ 		 	</blockquote>
+ 		</div>		
+		{/block:Quote}
+		
+		{block:Link}
+		<div class="text-left">
+			<h3><a href="{URL}">{Name}</a></h3>
+			{block:Description}
+			<BR><blockquote>
+					{Description}
+				</blockquote>
+			{/block:Description}
+		</div>
+		{/block:Link}
+		
+		{block:Chat}
+		<dl class="dl-horizontal pull-left text-left">
+				{block:Lines}
+					{block:Label}
+             	 	   <dt>{Label}</dt>
+             	    {/block:Label}
+                	<dd>{Line}</dd>
+       			 {/block:Lines}
+			</dl>
+		{/block:Chat}
+		
+		{block:Audio}
+			{block:AudioEmbed}
+				{AudioEmbed-250}
+			{/block:AudioEmbed}
+			{block:AudioPlayer}
+				{AudioPlayerWhite}
+			{/block:AudioPlayer}
+				<BR><BR>
+			{block:Artist}{Artist}{/block:Artist}
+			{block:Album}<BR>{Album}{/block:Album}
+			{block:PlayCount}<BR>{PlayCountWithLabel} {/block:PlayCount}
+				<BR><BR>
+			{block:ExternalAudio}<a href="{ExternalAudioURL}" class="btn btn-info btn-sm">Download</a>{/block:ExternalAudio}
+		{/block:Audio}
+		
+		{block:Video}
+			{VideoEmbed-400}
+			{block:Caption}
+			<BR><blockquote class="pull-left">{Caption}</blockquote>
+			{/block:Caption}
+		{/block:Video}
 
+		<BR>
+		
+		{block:RebloggedFrom}
+		<a href="{ReblogParentURL}"><img src="{ReblogParentPortraitURL-16}"></a>
+		<i class="fa fa-retweet"></i> Reblogged from <a href="{ReblogParentURL}" class="">{ReblogParentName}</a>
+		<br>
+		{/block:RebloggedFrom}
+	
+	</div>
+
+	<!-- Post Note -->
+	 {block:NoteCount}
+	 <BR>
+	   <h4>{NoteCount} Notes</h4>
+		{block:PostNotes}
+ 			{PostNotes}
+		{/block:PostNotes}
+	{/block:NoteCount}
+	
+		</div>
+	<!-- END col-lg-12 -->
 		<BR><BR>
-			
-		<!-- like and note and tag -->
-		<p class="text-right visible-lg visible-md"><a data-toggle="collapse" data-target="#set1"><i class="fa fa-cog fa-lg"></i></a></p>
-			<ol class="breadcrumb collapse text-right" id="set1">
-				<li><a href="#"><i class="fa fa-heart "></i>Like</a></li>
-				<li><a href="#"><i class="fa fa-star "></i>note</a></li>
-				<li><a href="#">#tag</a></li>
-			</ol>
-			<ol class="breadcrumb collapse text-right visible-sm visible-xs" id="set1">
-				<li><a href="#"><i class="fa fa-heart "></i>Like</a></li>
-				<li><a href="#"><i class="fa fa-star "></i>note</a></li>
-				<li><a href="#">#tag</a></li>
-			</ol>
-			
-		</div><!-- END col-lg-12 -->
-		<BR><BR>
- {/block:Posts}
+	{/block:Posts}
  
 	</div>
 <!-- End Post-text-NormalList --> 
@@ -360,34 +447,36 @@
 {/block:PermalinkPage}
 
 
-
-
 <!-- Footer. please do not delete. --> 
     <footer id="footer" class="text-right">
       <a href="" target="_blank">Cathedral-Star</a> designed by <a href="http://triste.undo.jp/" target="_blank">-273℃</a>
     </footer>
     
-  </div>      <!-- End Container -->
+
+</div>      <!-- End Container -->
 
 
+<script src="http://273c.github.io/template/tumblr-theme/js/cathedral.js"></script>
 
+
+<!-- infinite scroll -->
 <script type="text/javascript">
-$(function(){
-    $('#image-row').infinitescroll({
-        navSelector  : "ul.pager",
-            // ナビゲーション要素を指定します。
-        nextSelector : "ul.pager a#scroll",
-            // ナビゲーションの「次へ」の要素を指定します。
-        itemSelector : "#image-row div#post",
-            // 表示させる要素を指定します。
-       loading: {
-        msgText: "<em>読み込み中の文書はここを書き換える</em>"
-    }
+$('#postblock').infinitescroll({
+        navSelector  : 'ul.pager',
+        nextSelector : 'ul.pager a#scroll',
+        itemSelector : '#postblock a#post',
+        behavior     : 'twitter',
+        loading: {
+          finishedMsg: "end posts",
+          img: '',
+          msgText: ""
+        }
+
+        
     });
-    
-$(window).unbind('.infscr'); $('a#scroll').click(function(){ $(document).trigger('retrieve.infscr'); return false; });
-
-});
 </script>
-</body>
 
+
+
+</body>
+</html>
