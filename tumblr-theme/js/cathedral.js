@@ -908,7 +908,7 @@ myTumblrPosts.run();
 
     })();
  
- 
+$(function(){ 
 $('#postblock').infinitescroll({
         navSelector  : 'ul.pager',
         nextSelector : 'ul.pager a#scroll',
@@ -919,7 +919,5 @@ $('#postblock').infinitescroll({
           img: '',
           msgText: ""
         }
-
-        
     });   
-
+});
