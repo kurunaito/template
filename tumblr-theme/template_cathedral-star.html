@@ -24,15 +24,26 @@
   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<meta name="image:Background" content=""/>
+	<meta name="color:Background" content="#FFF"/>
+	<meta name="image:Header" content="" />
+
+	<meta name="if:Infinite Scroll" content="1">
+	
+	<meta name="if:Show Contents link" content="1">
+	<meta name="if:Show Tagcloud link" content="1">
 	<meta name="if:Show Archive link" content="1">
 	<meta name="if:Show Random link" content="0">
 	<meta name="if:Show RSS link" content="0">
-
-	<meta name="image:Background" content=""/>
-	<meta name="color:Background" content="#fff"/>
-	<meta name="image:Header" content="" />
 	<meta name="if:Delete tumblr controls" content="0">
-	<meta name="if:Permalink Reblog Button" content="1">	
+	<meta name="if:Permalink Reblog Button" content="1">
+	<meta name="text:Menu Other link URL" content=""/>
+	<meta name="text:Menu Other link Label" content="Label"/>
+	
+	<meta name="select:Post Layout" content="col-sm-12" title="1 colum">
+	<meta name="select:Post Layout" content="col-sm-6" title="2 colum">
+	<meta name="select:Post Layout" content="col-sm-4" title="3 colum">
+	<meta name="text:Post Height" content=""/>
 	
 	<meta name="if:Show User Info" content="1">
 	<meta name="text:Your Name" content=""/>
@@ -40,7 +51,7 @@
 
 	<meta name="if:Show User SNS" content="1">
 	<meta name="text:Your Twitter Username" content=""/>
-	<meta name="text:Your Website" content=""/>
+	<meta name="text:Your Website" content="http://"/>
 	<meta name="text:Your OtherSNS link" content=""/>
 
 	<meta name="text:Google Analytics ID" content="UA-000000-00" />
@@ -57,6 +68,20 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
+    
+ <style type="text/css">
+	
+	{block:IfPostHeight}
+	#image-row .thum {min-height:{text:Post Height}px;}
+    {/block:IfPostHeight}
+    
+    {block:IfDeletetumblrcontrols}
+    iframe#tumblr_controls {display:none};
+    {/block:IfDeletetumblrcontrols}
+    
+    {CustomCSS}
+  </style>
+  
   <!-- Google Analytics -->
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -71,31 +96,20 @@
   <!-- END Google Analytics -->
   
 </head>
-<body>
-	
- <style type="text/css">
-	body {
- 		  background-image: url('{image:Background}');
- 		  background-color:{color:Background} ;
-	}
+<body  style=" {block:IfBackgroundImage}background-image: url('{image:Background}'); {/block:IfBackgroundImage} background-color:{color:Background};">
 
-    {block:IfDeletetumblrcontrols}
-    iframe#tumblr_controls {display:none};
-    {/block:IfDeletetumblrcontrols}
-    
-    {CustomCSS}
-  </style>
+	
   
 <div class="container container-fluid img-rounded">
 
 <!-- Header-image or title -->
 	{block:IfHeaderImage}
-	<img src="{image:Header}" class="img-rounded img-responsive center-block"><BR>
+	<a href="/"><img src="{image:Header}" class="img-rounded img-responsive center-block"></a><BR>
 	{/block:IfHeaderImage}
 	
      {block:IfNotHeaderImage}
       <div class="page-header text-center">
-      	<h1>{Title}</h1>
+      	<a href="/"><h1>{Title}</h1></a>
       	{block:Description}<small>{Description}</small>{/block:Description}
       </div>
       {/block:IfNotHeaderImage}
@@ -112,10 +126,10 @@
 	<!-- navigation bar -->
 	<div class="collapse navbar-collapse" id="navbar-collapse">
 	<ul class="nav nav-justified">
-		<li class="hidden-sm hidden-xs"><a href="/" >Home</a></li>
 		 {block:IfShowUserInfo}
 		 <li><a href="#" data-toggle="collapse" data-target="#info">Info</a></li>
 		 {/block:IfShowUserInfo}
+		{block:IfShowContentslink}
 		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contents <b class="caret"></b></a>
 			<ul class="dropdown-menu" role="menu">
 				{block:IfShowArchivelink}<li><a href="/archive">Archive</a></li>{/block:IfShowArchivelink}
@@ -126,8 +140,10 @@
 				{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
 				 {/block:HasPages}
 			</ul>
-			</li>
-		<li><a href="#" data-toggle="collapse" data-target="#tags">Tags</a></li>
+		</li>
+		{/block:IfShowContentslink}
+		{block:IfShowTagcloudlink}<li><a href="#" data-toggle="collapse" data-target="#tags">Tags</a></li>{/block:IfShowTagcloudlink}
+		{block:IfMenuOtherlinkURL}<li><a href="{text:Menu Other link URL}" target="_top">{text:Menu Other link Label}</a></li>{/block:IfMenuOtherlinkURL}
 		{block:SubmissionsEnabled}<li><a href="/submit">Submit</a></li>{/block:SubmissionsEnabled}
         </ul>
 		</div>
@@ -155,6 +171,7 @@
 {/block:IfShowUserInfo}  
 <!-- END Info -->
 
+
 <!-- Start #tags -->
 	<div class="row collapse" id="tags">
 		<ol class="breadcrumb well" id="tagcloud">
@@ -177,8 +194,8 @@
 			
 	{block:Posts}	
 	
-	<a href="{Permalink}" id="post" class="col-xs-12 col-sm-4 thum effect"{block:Photo} style="background: url('{PhotoURL-400}') no-repeat scroll center transparent"{/block:Photo}
-	{block:Photoset}{block:Photos} style="background: url('{PhotoURL-400}') no-repeat scroll center transparent"{/block:Photos}{/block:Photoset}>
+	<a href="{Permalink}" id="post" class="col-xs-12 {select:Post Layout} thum effect"{block:Photo} style="background: url('{PhotoURL-500}') no-repeat scroll center transparent"{/block:Photo}
+	{block:Photoset}{block:Photos} style="background: url('{PhotoURL-500}') no-repeat scroll center transparent"{/block:Photos}{/block:Photoset}>
 
 		{block:Photoset}
 		<div class="text-left text-muted"><i class="fa fa-files-o fa-lg"> </i></div>
@@ -275,16 +292,23 @@
 
 	{block:Pagination}
 	<ul class="pager">
+		
+		{block:IfInfiniteScroll}
 		<!-- infinity scroll -->
 		{block:NextPage}
 		<a href="{NextPage}" id="scroll">
-		<button type="button" class="btn btn-default btn-lg btn-block hidden-sm hidden-xs" style="border:none;font-size: 16px;" >
+		<button type="button" class="btn btn-default btn-lg btn-block" style="border:none;font-size: 16px;" >
 			<i class="fa fa-angle-double-down"></i> more</button>
 		</a>
 		{/block:NextPage}
+		{/block:IfInfiniteScroll}
+		
+		{block:IfNotInfiniteScroll}
  		<!-- normal pager -->
- 		{block:PreviousPage}<li class="previous visible-sm visible-xs"><a href="{PreviousPage}">&larr; Older</a></li>{/block:PreviousPage}
-		{block:NextPage}<li class="next visible-sm visible-xs"><a href="{NextPage}">Newer &rarr;</a></li>{/block:NextPage}
+ 		{block:PreviousPage}<li class="previous"><a href="{PreviousPage}">&larr; Older</a></li>{/block:PreviousPage}
+		{block:NextPage}<li class="next"><a href="{NextPage}">Newer &rarr;</a></li>{/block:NextPage}
+		{/block:IfNotInfiniteScroll}
+		
 	</ul>
 	{/block:Pagination}
 	
@@ -294,7 +318,7 @@
 
 {block:PermalinkPage}
 
-<!-- Start Post-text-NomalList -->
+<!-- Start Post-text-NormalList -->
 	<div class="row">
 	
 	{block:Posts}
@@ -317,14 +341,14 @@
 		</div>
 		
 		<p class="text-right">
-			<small>
+			
 			{block:Date}
 				{block:NewDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
 				{block:SameDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
 			{/block:Date}
-			</small>
+			
 		<!-- like and note and tag -->
-			<a data-toggle="collapse" data-target="#set1" href="#"><i class="fa fa-plus-square"></i></a>
+			<a data-toggle="collapse" data-target="#set1" href="#"><i class="fa fa-plus-square-o fa-lg"></i></a>
 			<ol class="breadcrumb collapse text-right" id="set1">
 			<ul class="list-inline">
 				<li>{LikeButton size="15"}</li>
@@ -336,7 +360,7 @@
 			</ol>
 		</p>
 		
-		<div class="text-center center-block col-lg-12">
+		<div class="text-center center-block col-lg-12" id="PermalinkPost">
 		
 		{block:Text}
 		<div class="text-left">
@@ -345,9 +369,9 @@
 		{/block:Text}
 		
 		{block:Photo}
-			<img src="{PhotoURL-500}" class="img-responsive center-block" max-width="680px" {block:HighRes}style="display:none"{/block:HighRes}>
+			<a href="{PhotoURL-HighRes}"><img src="{PhotoURL-500}" class="center-block" max-width="680px" {block:HighRes}style="display:none"{/block:HighRes}></a>
 			{block:HighRes}
-				<img src="{PhotoURL-HighRes}" class="img-responsive center-block" max-width="680px">
+				<a href="{PhotoURL-HighRes}"><img src="{PhotoURL-HighRes}" class="center-block" max-width="680px"></a>
 			{/block:HighRes}
 			{block:Caption}
 				<BR>{Caption}
@@ -356,7 +380,7 @@
 		
 		{block:Photoset}
 			<div class="hidden-sm hidden-xs">{Photoset}</div>
-			<div class="visible-sm visible-xs">{block:Photos}<img src="{PhotoURL-500}" class="img-responsive center-block"> {/block:Photos}</div>
+			<div class="visible-sm visible-xs">{block:Photos}<BR><a href="{PhotoURL-HighRes}"><img src="{PhotoURL-HighRes}" class="center-block"></a> {/block:Photos}</div>
 			{block:Caption}
 				<BR>{Caption}
 			{/block:Caption}
@@ -458,7 +482,7 @@
 
 <script src="http://273c.github.io/template/tumblr-theme/js/cathedral.js"></script>
 
-
+{block:IfInfiniteScroll}
 <!-- infinite scroll -->
 <script type="text/javascript">
 $('#postblock').infinitescroll({
@@ -470,13 +494,10 @@ $('#postblock').infinitescroll({
           finishedMsg: "end posts",
           img: '',
           msgText: ""
-        }
-
-        
+        }   
     });
 </script>
-
-
+{/block:IfInfiniteScroll}
 
 </body>
 </html>
