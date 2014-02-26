@@ -89,3 +89,6 @@ Tumblrカスタマイズページの下部にある、「**詳細設定**」へ�
 
 ####記事ブロック背景色変更
 `#image-row .thum {background-color: 好きな色コード;}`  
+
+####ページトップに戻るリンクの背景色変更（PC表示のみ）
+`.pagetop a {background-color: 好きな色コード;}`
