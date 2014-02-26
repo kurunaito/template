@@ -10,7 +10,9 @@
 
 あと、適当にインフィニティスクロールを楽しめるように記事を投稿してますが、案の定二次創作なので気にしないでください。  
 
-
+#Download
+**[ここ](https://raw.github.com/273c/template/master/tumblr-theme/cathedral-star/template_cathedral-star.html)**をコピーして、タンブラーのカスタマイズ画面にそのままペースト。  
+プレビューでCSSが反映されていなくても、保存するとちゃんと反映されます。  
 
 #Specification
 * レスポンシブ対応
@@ -27,6 +29,17 @@
 * INFOメニュー内の「名前」「プロフィール」「SNSボタン（Twitter/site/その他アドレス）」の表示/非表示切り替え
 * Infinite Scroll。PC画面のみ「More」を押すと自動で読み込む。
 * Tagcloud。記事３００件までを読み込んでタグ一覧を自動で作る。
-* cssやjqueryの類を全て外部読み込み。  
+* cssやjqueryの類を全て外部読み込み。   
+
+#Designted by
+####竜原/-273℃
+* [website : -273℃](http://triste.undo.jp/)  
+注意：二次創作BL小説サイトです。
+* [Twitter : @tatuhara](https://twitter.com/tatuhara)
+* [webdesign tumblr : dot-web](http://dot-web.tumblr.com/)  
+
+二次配布などを禁止し、またこのテーマを利用して起こったあらゆる被害・損害についての責任は一切負いません。
+
+#Version
 
 
