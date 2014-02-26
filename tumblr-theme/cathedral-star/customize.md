@@ -78,4 +78,14 @@ freeページで別にアバウトページなどを作りたい人はオフに�
 * **Your Other SNS link**  
 SNSやウェブサイトのリンクを張ります。
 * **Google Analtics ID**  
-Google Analticsを利用の際はIDをこちらに
+Google Analticsを利用の際はIDをこちらに  
+
+#Custom CSS
+ちょっと細かいところのデザインを変えたいというときは、  `{CustomCSS}`を使います。  
+Tumblrカスタマイズページの下部にある、「**詳細設定**」へ飛び、カスタムCSSを入力していきます。  
+
+####リンク色変更
+`a { color:好きな色コード;}`  
+
+####記事ブロック背景色変更
+`#image-row .thum {background-color: 好きな色コード;}`  
