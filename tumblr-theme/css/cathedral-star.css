@@ -20,7 +20,6 @@ body {
 }
 .page-header {
     margin: 20px 0px 20px;
-    
 }
  
  a {
@@ -62,6 +61,7 @@ h2{
 	background-color:#EEEEEE;	
 	position:relative;
 }
+
 #image-row  .block{
         display:block;
         word-break:break-all;
@@ -78,7 +78,7 @@ h2{
    left:0;
    right:0;
    overflow:visible;
-   padding:20px;
+   padding:25px;
    color:#fff;
    background-color: rgba(0,0,0,0.7);
    -webkit-transition: all 0.4s ease-in-out;
@@ -113,6 +113,12 @@ h2{
 
 
 #infscr-loading { text-align: center; }
+
+#PermalinkPost > img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 
 #footer {
   border-top: 1px solid #eee;
