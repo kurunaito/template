@@ -33,6 +33,25 @@ a:hover, a:focus {
     text-decoration: none;
 }
 
+.pagetop {
+	display: none;
+	position: fixed;
+	bottom: 30px;
+	right: 45px;
+}
+.pagetop a {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-color: #eee;
+	border-radius: 50px;
+	text-align: center;
+	color: #fff;
+	font-size: 24px;
+	text-decoration: none;
+	line-height: 50px;
+}
+
 .lead {
  	font-family:  sans-serif;
  	font-weight: none;
