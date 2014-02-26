@@ -115,7 +115,6 @@ h2{
 #infscr-loading { text-align: center; }
 
 #PermalinkPost img{
-    display: block;
     max-width: 100%;
     height: auto;
 }
