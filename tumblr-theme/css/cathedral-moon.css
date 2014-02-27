@@ -20,7 +20,7 @@ body {
 	padding:5px;
 }
 .page-header {
-    margin: 20px 0px 20px;
+    margin: 10px 10px 10px;
 }
 .indexpage{
 	border:none;
@@ -75,7 +75,7 @@ h2{
 
 
 .table > tbody > tr > td {
-    padding:4px;
+    padding:5px;
     border: 0px solid #DDD;
     font-size:0.95em;
 }
