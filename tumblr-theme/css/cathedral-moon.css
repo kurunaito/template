@@ -22,6 +22,11 @@ body {
 .page-header {
     margin: 20px 10px 10px;
 }
+
+.page-header > h4 > i {
+		color:#A8A8A8;
+}
+
 .indexpage{
 	border:none;
 	padding-top:5px;
