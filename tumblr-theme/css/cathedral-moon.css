@@ -1,0 +1,165 @@
+
+@import url(http://fonts.googleapis.com/css?family=Exo:200);
+  
+body {
+  padding-top:30px;
+  padding-bottom:30px;
+
+}
+
+.container,.container-fluid{
+	max-width: 780px;
+	background-color:#fff;
+	padding:10px 10px;
+}
+
+.row{
+	padding:5px;
+}
+.padding {
+	padding:5px;
+}
+.page-header {
+    margin: 20px 0px 20px;
+}
+.indexpage{
+	border:none;
+}
+ 
+ a {
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+}
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+.pagetop {
+	display: none;
+	position: fixed;
+	bottom: 30px;
+	right: 55px;
+}
+.pagetop a {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-color: #333;
+	border-radius: 50px;
+	text-align: center;
+	color: #fff;
+	font-size: 24px;
+	text-decoration: none;
+	line-height: 50px;
+}
+
+.lead {
+ 	font-family:  sans-serif;
+ 	font-weight: none;
+}
+
+h1{
+	margin-top:5px;
+	margin-bottom:15px;
+	font-family: 'Exo', sans-serif;
+	font-size:2.8em;
+
+}
+h2{
+	font-family: 'Exo', sans-serif;
+	font-size:26px;
+}
+
+
+.table > tbody > tr > td {
+    padding:4px;
+    border: 0px solid #DDD;
+    font-size:0.95em;
+}
+.table > tbody > tr > td > i{
+	color:#A8A8A8;
+}
+
+#infscr-loading { text-align: center; margin-top:20px; margin-bottom:20px; }
+
+#PermalinkPost img{
+    max-width: 100%;
+    height: auto;
+}
+
+#footer {
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+  text-align:right;
+  font-size:0.7em;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+
+/* Customize the nav-justified links to be fill the entire space of the .navbar */
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+}
+
+.nav-pills{
+  border-radius: 8px;
+  border: 0px solid #AFAFAF;
+  margin-bottom:20px;
+}
+
+.nav-pills > li > a {
+  font-family: 'Exo', sans-serif;
+  font-size:1.6em;
+  padding-top: 4px;
+  margin-right:0px;
+  padding-bottom: 3px;
+  color: #4F4F4F;
+  text-align: center;
+  border-bottom: 0px solid #fff;
+  background-color: transparent; /* Old browsers */
+ 
+}
+
+
+@media (max-width:768px){
+.nav-pills > li > a{
+ font-size:1.2em;
+}
+.nav-pills  .open .dropdown-menu {
+    position:relative;
+    float: none;
+    width: auto;
+    margin-top: 0px;
+    background-color: transparent;
+    border: 0px none;
+    box-shadow: none;
+}
+.nav-pills  > li > .dropdown-menu {
+    margin-top: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+.open > .dropdown-menu {
+    display: block;
+}
+}
+
+
+
+
+
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
