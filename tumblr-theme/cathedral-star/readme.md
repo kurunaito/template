@@ -13,6 +13,7 @@
 #Download
 **[ここ](https://raw.github.com/273c/template/master/tumblr-theme/cathedral-star/template_cathedral-star.html)**をコピーして、タンブラーのカスタマイズ画面にそのままペースト。  
 プレビューでCSSが反映されていなくても、保存するとちゃんと反映されます。  
+**必ず「詳細設定」の「モバイルレイアウトを使用する」をオフにしてください。**
 
 #Specification
 * レスポンシブ対応
