@@ -8,6 +8,7 @@
 	
 	Theme design by tatsuhara (@tatuhara)
 	http://triste.undo.jp/
+	http://dot-web.tumblr.com/
 -->
 
 <html lang="ja" prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml">
@@ -37,6 +38,7 @@
 	<meta name="if:Show RSS link" content="0">
 	<meta name="if:Delete tumblr controls" content="0">
 	<meta name="if:Permalink Reblog Button" content="1">
+	<meta name="if:Permalink Like Button" content="1">
 	<meta name="text:Menu Other link URL" content=""/>
 	<meta name="text:Menu Other link Label" content="Label"/>
 	
@@ -44,6 +46,7 @@
 	<meta name="select:Post Layout" content="col-sm-6" title="2 colum">
 	<meta name="select:Post Layout" content="col-sm-4" title="3 colum">
 	<meta name="text:Post Height" content=""/>
+	<meta name="if:Show Permalink Date" content="1">
 	
 	<meta name="if:Show User Info" content="1">
 	<meta name="text:Your Name" content=""/>
@@ -51,7 +54,7 @@
 
 	<meta name="if:Show User SNS" content="1">
 	<meta name="text:Your Twitter Username" content=""/>
-	<meta name="text:Your Website" content="http://"/>
+	<meta name="text:Your Website" content=""/>
 	<meta name="text:Your OtherSNS link" content=""/>
 
 	<meta name="text:Google Analytics ID" content="UA-000000-00" />
@@ -342,20 +345,19 @@
 		
 		<p class="text-right">
 			
+			{block:IfShowPermalinkDate}
 			{block:Date}
 				{block:NewDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
 				{block:SameDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
-			{/block:Date}
-			
-		<!-- like and note and tag -->
-			<a data-toggle="collapse" data-target="#set1" href="#"><i class="fa fa-plus-square-o fa-lg"></i></a>
-			<ol class="breadcrumb collapse text-right" id="set1">
+			{/block:Date}<BR>
+			{/block:IfShowPermalinkDate}
+			<!-- like and note and tag -->
+			<ol class="text-right" >
 			<ul class="list-inline">
-				<li>{LikeButton size="15"}</li>
-				{block:IfPermalinkReblogButton}
-				<li>{ReblogButton size="15"}</li>
-				{/block:IfPermalinkReblogButton}
-				{block:HasTags}{block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}{/block:HasTags}
+				{block:IfPermalinkLikeButton}<li>{LikeButton size="13"}</li>{/block:IfPermalinkLikeButton}
+				{block:IfPermalinkReblogButton}<li>{ReblogButton size="13"}</li>{/block:IfPermalinkReblogButton}
+				{block:NoteCount}<li><a href="{Permalink}" class="badge">{NoteCount}</a></li>{/block:NoteCount}
+				{block:HasTags}{block:Tags}<li><a href="{TagURL}"><small>#{Tag}</small></a></li>{/block:Tags}{/block:HasTags}
 			</ul>
 			</ol>
 		</p>
@@ -399,6 +401,7 @@
 		
 		{block:Link}
 		<div class="text-left">
+			{block:Thumbnail}<img src="{Thumbnail}" class="center-block" max-width="680px">{/block:Thumbnail}
 			<h3><a href="{URL}">{Name}</a></h3>
 			{block:Description}
 			<BR><blockquote>
@@ -473,7 +476,7 @@
 
 <!-- Footer. please do not delete. --> 
     <footer id="footer" class="text-right">
-      <a href="" target="_blank">Cathedral-Star</a> designed by <a href="http://triste.undo.jp/" target="_blank">-273℃</a>
+      <a href="http://dot-web.tumblr.com/" target="_blank">Cathedral-Star</a> designed by <a href="http://triste.undo.jp/" target="_blank">-273℃</a>
     </footer>
     
 
