@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<!--
+	Thank you very much for Downloading !
+	This Theme for every Fujoshi.
+	
+	Theme name : Cathedral-Moon
+	
+	Theme design by tatsuhara (@tatuhara)
+	http://triste.undo.jp/
+	http://dot-web.tumblr.com/
+-->
+
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml">
+<head>
+	<meta name="robots" content="noindex,nofollow"> 
+	<title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+
+	<meta charset="UTF-8">
+	
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+	<link rel="apple-touch-icon" href="{PortraitURL-128}">
+	<link rel="canonical" href="{Permalink}"/>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="image:Background" content=""/>
+	<meta name="color:Background" content="#FFF"/>
+	<meta name="image:Header" content="" />
+
+	<meta name="if:Infinite Scroll" content="1">
+	
+	<meta name="if:Show Contents link" content="1">
+	<meta name="if:Show Tagcloud link" content="1">
+	<meta name="if:Show Archive link" content="1">
+	<meta name="if:Show Random link" content="0">
+	<meta name="if:Show RSS link" content="0">
+	<meta name="if:Delete tumblr controls" content="0">
+	<meta name="if:Permalink Reblog Button" content="1">
+	<meta name="if:Permalink Like Button" content="1">
+	<meta name="text:Menu Other link URL" content=""/>
+	<meta name="text:Menu Other link Label" content="Label"/>
+	
+	<meta name="if:Show Post Date" content="1">
+	<meta name="if:Show Permalink Date" content="1">
+	<meta name="if:Text Link List Mode" content="1">
+	
+	<meta name="if:Show User Info" content="1">
+	<meta name="text:Your Name" content=""/>
+	<meta name="text:Your Profile" content=""/>	
+
+	<meta name="if:Show User SNS" content="1">
+	<meta name="text:Your Twitter Username" content=""/>
+	<meta name="text:Your Website" content=""/>
+	<meta name="text:Your OtherSNS link" content=""/>
+
+	<meta name="text:Google Analytics ID" content="UA-000000-00" />
+
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href ="http://273c.github.io/template/tumblr-theme/css/cathedral-moon.css" rel="stylesheet">
+	
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript" ></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    
+ <style type="text/css">
+    
+    {block:IfDeletetumblrcontrols}
+    iframe#tumblr_controls {display:none};
+    {/block:IfDeletetumblrcontrols}
+    
+    {CustomCSS}
+  </style>
+  
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '{text:Google Analytics ID}']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <!-- END Google Analytics -->
+  
+</head>
+<body  style=" {block:IfBackgroundImage}background-image: url('{image:Background}'); {/block:IfBackgroundImage} background-color:{color:Background};">
+
+
+<div class="container container-fluid img-rounded">
+
+<!-- Header-image or title -->
+	{block:IfHeaderImage}
+	<a href="/"><img src="{image:Header}" class="img-rounded img-responsive center-block"></a><BR>
+	{/block:IfHeaderImage}
+	
+     {block:IfNotHeaderImage}
+      <div class="page-header indexpage">
+      	<a href="/"><h1>{Title}</h1></a>
+      	{block:Description}<small>{Description}</small>{/block:Description}
+      </div>
+      {/block:IfNotHeaderImage}
+<!-- END Header-image or title -->
+
+
+<!-- Navigation -->
+	<div style="width:100%;" class=" clearfix">
+	<ul class="nav nav-pills pull-right">
+		 {block:IfShowUserInfo}
+		 <li><a href="#" data-toggle="collapse" data-target="#info">Info</a></li>
+		 {/block:IfShowUserInfo}
+		{block:IfShowContentslink}
+		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contents <b class="caret"></b></a>
+			<ul class="dropdown-menu" role="menu">
+				{block:IfShowArchivelink}<li><a href="/archive">Archive</a></li>{/block:IfShowArchivelink}
+				{block:IfShowRandomlink}<li><a href="/random">Random</a></li>{/block:IfShowRandomlink}
+				{block:IfShowRSSlink}<li><a href="{RSS}">RSS</a></li>{/block:IfShowRSSlink}
+				{block:HasPages} <!--　Free Page List -->
+				<li class="divider"></li>
+				{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+				 {/block:HasPages}
+			</ul>
+		</li>
+		{/block:IfShowContentslink}
+		{block:IfShowTagcloudlink}<li><a href="#" data-toggle="collapse" data-target="#tags">Tags</a></li>{/block:IfShowTagcloudlink}
+		{block:IfMenuOtherlinkURL}<li><a href="{text:Menu Other link URL}" target="_top">{text:Menu Other link Label}</a></li>{/block:IfMenuOtherlinkURL}
+		{block:SubmissionsEnabled}<li><a href="/submit">Submit</a></li>{/block:SubmissionsEnabled}
+        </ul>
+		</div>
+<!-- END Navigation -->
+
+<!-- Info -->
+{block:IfShowUserInfo}
+	<div class="row collapse" id="info">
+	<div class="col-lg-3" align="center">
+		<a href="/"><img src="{PortraitURL-128}" class="img-rounded" width="110"></a><BR><BR>
+			{block:IfShowUserSNS}
+			<div class="btn-group">
+  				{block:IfYourTwitterUsername}<a class="btn btn-default" href="https://twitter.com/{text:Your Twitter Username}"><i class="fa fa-twitter  fa-lg"></i></a>{/block:IfYourTwitterUsername}
+ 				{block:IfYourWebsite}<a class="btn btn-default" href="{text:Your Website}"><i class="fa fa-home fa-lg"></i></a>{/block:IfYourWebsite}
+  				{block:IfYourOtherSNSlink}<a class="btn btn-default" href="{text:Your OtherSNS link}"><i class="fa fa-link fa-lg"></i></a>{/block:IfYourOtherSNSlink}
+			</div>
+			<BR>
+			{/block:IfShowUserSNS}
+			</div> 
+       <div class="col-lg-8">
+       	{block:IfYourName}<i class="fa fa-user fa-lg"></i> {text:Your Name}{/block:IfYourName}<BR><BR>
+		{text:Your Profile}
+       </div>
+	</div>
+{/block:IfShowUserInfo}  
+<!-- END Info -->
+
+
+<!-- Start #tags -->
+	<div class="row collapse" id="tags">
+		<ol class="breadcrumb well" id="tagcloud">
+		<!--Tumblr Tag Cloud-->
+		</ol>
+	</div>
+<!-- End #tags --> 
+
+
+{block:IndexPage}
+	{block:TagPage}
+		<h2><i class="fa fa-tag"></i>　{Tag}</h2>
+	{/block:TagPage}
+        
+<!-- Start Post -->
+	<div class="row">
+
+	{block:IfTextLinkListMode}
+		<div class="col-lg-12">
+		<table class="table table-hover">
+		<tbody id="postblock">
+			
+			{block:Posts}	
+				<tr id="post">
+					
+				{block:IfShowPostDate}
+				<td><!-- Date -->
+				{block:Date}
+					{block:NewDayDate}{ShortYear}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
+					{block:SameDayDate}{ShortYear}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
+				{/block:Date}
+				</td>
+				{/block:IfShowPostDate}
+				
+				<td><!-- Post type -->
+					{block:Text}<i class="fa fa-file-text-o"></i>{/block:Text}
+					{block:Photo}<i class="fa fa-picture-o"></i>{/block:Photo}
+					{block:Photoset}<i class="fa fa-files-o"></i>{/block:Photoset}
+  					{block:Quote}<i class="fa fa-quote-left"></i>{/block:Quote}
+  					{block:Link}<i class="fa fa-link"></i>{/block:Link}
+  					{block:Chat}<i class="fa fa-comments"></i>{/block:Chat}
+  					{block:Audio}<i class="fa fa-headphones"></i>{/block:Audio}
+  					{block:Video}<i class="fa fa-youtube-play"></i>{/block:Video}					
+					<!-- Reblog icon -->
+					{block:RebloggedFrom}
+						<span class="text-muted"><i class="fa fa-retweet"></i></span>
+					{/block:RebloggedFrom}
+				</td>
+				<td><!-- Post title <-->
+					<a href="{Permalink}">
+					{block:Text}{block:Title}{Title}{/block:Title}{block:IfNotTitleText}無題{/block:IfNotTitleText}{/block:Text}
+					{block:Photo}{PostID}{/block:Photo}
+					{block:Photoset}{PostID}{/block:Photoset}
+  					{block:Quote}Quote{/block:Quote}
+  					{block:Link}{Name}{/block:Link}
+  					{block:Chat}{block:Title}{Title}{/block:Title}{block:IfNotTitleText}無題{/block:IfNotTitleText}{/block:Chat}
+  					{block:Audio}{block:TrackName}{TrackName}{/block:TrackName}{/block:Audio}
+  					{block:Video}Video{/block:Video}
+					</a>
+					
+					<!-- Responsive tag/note -->
+					<div class="visible-sm visible-xs">
+					{block:HasTags}{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags} {/block:HasTags}
+					{block:NoteCount}/ <i class="fa fa-star "></i> {NoteCount}{/block:NoteCount}
+					</div>
+				</td>
+				<td class="hidden-sm hidden-xs"><!-- Tag -->
+					{block:HasTags}{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}{/block:HasTags}
+				</td>
+				<td class="hidden-sm hidden-xs"><!-- Note count -->
+					{block:NoteCount}<i class="fa fa-star "></i> {NoteCount}{/block:NoteCount}
+				</tr>
+
+			{/block:Posts}		
+		</tbody>
+		</table>
+		</div>
+		{/block:IfTextLinkListMode}
+		
+		{block:IfNotTextLinkListMode}
+		<div class="col-lg-12" id="postblock">
+			{block:Posts}
+		<div id="post">
+		<div class="page-header">
+			
+  		<h4>
+  		<a href="{Permalink}">
+  			{block:Text}
+  				{block:Title}{Title}{/block:Title}
+  				{block:IfNotTitleText}non title{/block:IfNotTitleText}
+  			{/block:Text}
+  			{block:Photo}<i class="fa fa-picture-o "></i>{/block:Photo}
+  			{block:Photoset}<i class="fa fa-files-o "></i>{/block:Photoset}
+  			{block:Quote}<i class="fa fa-quote-left "></i> Quote{/block:Quote}
+  			{block:Link}<i class="fa fa-link"></i>　Link{/block:Link}
+  			{block:Chat}<i class="fa fa-comments "></i>　{block:Title}{Title} {/block:Title}{/block:Chat}
+  			{block:Audio}<i class="fa fa-headphones "></i>　{block:TrackName}{TrackName}{/block:TrackName}{/block:Audio}
+  			{block:Video}<i class="fa fa-youtube-play "></i>　Video{/block:Video}
+  		</a>
+  			{block:RebloggedFrom}
+			<i class="fa fa-retweet"></i>
+			{/block:RebloggedFrom}
+		</h4>
+		</div>
+		
+		<p class="text-right">
+			
+			{block:IfShowPermalinkDate}
+			{block:Date}
+				{block:NewDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
+				{block:SameDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
+			{/block:Date}<BR>
+			{/block:IfShowPermalinkDate}
+			<!-- like and note and tag -->
+			<ol class="text-right" >
+			<ul class="list-inline">
+				{block:IfPermalinkLikeButton}<li>{LikeButton size="14"}</li>{/block:IfPermalinkLikeButton}
+				{block:IfPermalinkReblogButton}<li>{ReblogButton size="14"}</li>{/block:IfPermalinkReblogButton}
+				{block:NoteCount}<li><a href="{Permalink}" class="badge">{NoteCount}</a></li>{/block:NoteCount}
+				{block:HasTags}{block:Tags}<li><a href="{TagURL}"><small>#{Tag}</small></a></li>{/block:Tags}{/block:HasTags}
+			</ul>
+			</ol>
+
+		</p>
+		
+		<div class="text-center center-block col-lg-12" id="PermalinkPost">
+		
+		{block:Text}
+		<div class="text-left">
+				{Body}	
+		</div>
+		{/block:Text}
+		
+		{block:Photo}
+			<a href="{PhotoURL-HighRes}"><img src="{PhotoURL-500}" class="center-block" max-width="550px" ></a>
+
+			{block:Caption}
+				<BR>{Caption}
+			{/block:Caption}
+		{/block:Photo}
+		
+		{block:Photoset}
+			<div class="hidden-sm hidden-xs">{Photoset-500}</div>
+			<div class="visible-sm visible-xs">{block:Photos}<BR><a href="{PhotoURL-HighRes}"><img src="{PhotoURL-HighRes}" class="center-block"></a> {/block:Photos}</div>
+			{block:Caption}
+				<BR>{Caption}
+			{/block:Caption}
+		{/block:Photoset}
+		
+		{block:Quote}
+		<div class="text-left">
+			<blockquote>
+		 		<p>{Quote}</p>
+  			<footer>
+  				{block:Source}{Source}{/block:Source}
+  			</footer>
+ 		 	</blockquote>
+ 		</div>		
+		{/block:Quote}
+		
+		{block:Link}
+		<div class="text-left">
+			<h3><a href="{URL}">{Name}</a></h3>
+			{block:Description}
+			<BR><blockquote>
+					{Description}
+				</blockquote>
+			{/block:Description}
+		</div>
+		{/block:Link}
+		
+		{block:Chat}
+		<dl class="dl-horizontal pull-left text-left">
+				{block:Lines}
+					{block:Label}
+             	 	   <dt>{Label}</dt>
+             	    {/block:Label}
+                	<dd>{Line}</dd>
+       			 {/block:Lines}
+			</dl>
+		{/block:Chat}
+		
+		{block:Audio}
+			{block:AudioEmbed}
+				{AudioEmbed-250}
+			{/block:AudioEmbed}
+			{block:AudioPlayer}
+				{AudioPlayerWhite}
+			{/block:AudioPlayer}
+				<BR><BR>
+			{block:Artist}{Artist}{/block:Artist}
+			{block:Album}<BR>{Album}{/block:Album}
+			{block:PlayCount}<BR>{PlayCountWithLabel} {/block:PlayCount}
+				<BR><BR>
+			{block:ExternalAudio}<a href="{ExternalAudioURL}" class="btn btn-info btn-sm">Download</a>{/block:ExternalAudio}
+		{/block:Audio}
+		
+		{block:Video}
+			{VideoEmbed-400}
+			{block:Caption}
+			<BR><blockquote class="pull-left">{Caption}</blockquote>
+			{/block:Caption}
+		{/block:Video}
+
+		<BR>
+		
+		{block:RebloggedFrom}
+		<a href="{ReblogParentURL}"><img src="{ReblogParentPortraitURL-16}"></a>
+		<i class="fa fa-retweet"></i> Reblogged from <a href="{ReblogParentURL}" class="">{ReblogParentName}</a>
+		<br>
+		{/block:RebloggedFrom}
+	</div>
+	
+		</div>
+	<!-- END col-lg-12 -->
+		<BR><BR>
+		
+	{/block:Posts}
+</div>
+		{/block:IfNotTextLinkListMode}
+	
+</div>
+<!-- End Post --> 
+
+<!-- Index Page Pagination -->
+
+	{block:Pagination}
+	<ul class="pager">
+		
+		{block:IfInfiniteScroll}
+		<!-- infinity scroll -->
+		{block:NextPage}
+		<a href="{NextPage}" id="scroll">
+		<button type="button" class="btn btn-default btn-lg btn-block" style="border:none;font-size: 16px;" >
+			<i class="fa fa-angle-double-down"></i> more</button>
+		</a>
+		{/block:NextPage}
+		{/block:IfInfiniteScroll}
+		
+		{block:IfNotInfiniteScroll}
+ 		<!-- normal pager -->
+ 		{block:PreviousPage}<li class="previous"><a href="{PreviousPage}">&larr; Older</a></li>{/block:PreviousPage}
+		{block:NextPage}<li class="next"><a href="{NextPage}">Newer &rarr;</a></li>{/block:NextPage}
+		{/block:IfNotInfiniteScroll}
+		
+	</ul>
+	{/block:Pagination}
+	
+{/block:IndexPage}
+
+
+
+{block:PermalinkPage}
+
+<!-- Start Post-text-NormalList -->
+	<div class="row">
+	
+	{block:Posts}
+	<div class="col-lg-12">
+		<div class="page-header">
+			
+  		<h4>
+  			{block:Text}
+  				{block:Title}{Title}{/block:Title}
+  				{block:IfNotTitleText}non title{/block:IfNotTitleText}
+  			{/block:Text}
+  			{block:Photo}<i class="fa fa-picture-o fa-lg"></i>{/block:Photo}
+  			{block:Photoset}<i class="fa fa-files-o fa-lg"></i>{/block:Photoset}
+  			{block:Quote}<i class="fa fa-quote-left fa-lg"></i> Quote{/block:Quote}
+  			{block:Link}<i class="fa fa-link fa-lg"></i>　Link{/block:Link}
+  			{block:Chat}<i class="fa fa-comments fa-lg"></i>　{block:Title}{Title} {/block:Title}{/block:Chat}
+  			{block:Audio}<i class="fa fa-headphones fa-lg"></i>　{block:TrackName}{TrackName}{/block:TrackName}{/block:Audio}
+  			{block:Video}<i class="fa fa-youtube-play fa-lg"></i>　Video{/block:Video}
+		</h4>
+		</div>
+		
+		<p class="text-right">
+			
+			{block:IfShowPermalinkDate}
+			{block:Date}
+				{block:NewDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:NewDayDate}
+				{block:SameDayDate}{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{/block:SameDayDate}
+			{/block:Date}<BR>
+			{/block:IfShowPermalinkDate}
+			<!-- like and note and tag -->
+			<ol class="text-right" >
+			<ul class="list-inline">
+				{block:IfPermalinkLikeButton}<li>{LikeButton size="13"}</li>{/block:IfPermalinkLikeButton}
+				{block:IfPermalinkReblogButton}
+				<li>{ReblogButton size="13"}</li>
+				{/block:IfPermalinkReblogButton}
+				{block:HasTags}{block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}{/block:HasTags}
+			</ul>
+			</ol>
+
+		</p>
+		
+		<div class="text-center center-block col-lg-12" id="PermalinkPost">
+		<BR>
+		{block:Text}
+		<div class="text-left">
+				{Body}	
+		</div>
+		{/block:Text}
+		
+		{block:Photo}
+			<a href="{PhotoURL-HighRes}"><img src="{PhotoURL-500}" class="center-block" max-width="680px" {block:HighRes}style="display:none"{/block:HighRes}></a>
+			{block:HighRes}
+				<a href="{PhotoURL-HighRes}"><img src="{PhotoURL-HighRes}" class="center-block" max-width="680px"></a>
+			{/block:HighRes}
+			{block:Caption}
+				<BR>{Caption}
+			{/block:Caption}
+		{/block:Photo}
+		
+		{block:Photoset}
+			<div class="hidden-sm hidden-xs">{Photoset-500}</div>
+			<div class="visible-sm visible-xs">{block:Photos}<BR><a href="{PhotoURL-HighRes}"><img src="{PhotoURL-HighRes}" class="center-block"></a> {/block:Photos}</div>
+			{block:Caption}
+				<BR>{Caption}
+			{/block:Caption}
+		{/block:Photoset}
+		
+		{block:Quote}
+		<div class="text-left">
+			<blockquote>
+		 		<p>{Quote}</p>
+  			<footer>
+  				{block:Source}{Source}{/block:Source}
+  			</footer>
+ 		 	</blockquote>
+ 		</div>		
+		{/block:Quote}
+		
+		{block:Link}
+		<div class="text-left">
+			<h3><a href="{URL}">{Name}</a></h3>
+			{block:Description}
+			<BR><blockquote>
+					{Description}
+				</blockquote>
+			{/block:Description}
+		</div>
+		{/block:Link}
+		
+		{block:Chat}
+		<dl class="dl-horizontal pull-left text-left">
+				{block:Lines}
+					{block:Label}
+             	 	   <dt>{Label}</dt>
+             	    {/block:Label}
+                	<dd>{Line}</dd>
+       			 {/block:Lines}
+			</dl>
+		{/block:Chat}
+		
+		{block:Audio}
+			{block:AudioEmbed}
+				{AudioEmbed-250}
+			{/block:AudioEmbed}
+			{block:AudioPlayer}
+				{AudioPlayerWhite}
+			{/block:AudioPlayer}
+				<BR><BR>
+			{block:Artist}{Artist}{/block:Artist}
+			{block:Album}<BR>{Album}{/block:Album}
+			{block:PlayCount}<BR>{PlayCountWithLabel} {/block:PlayCount}
+				<BR><BR>
+			{block:ExternalAudio}<a href="{ExternalAudioURL}" class="btn btn-info btn-sm">Download</a>{/block:ExternalAudio}
+		{/block:Audio}
+		
+		{block:Video}
+			{VideoEmbed-400}
+			{block:Caption}
+			<BR><blockquote class="pull-left">{Caption}</blockquote>
+			{/block:Caption}
+		{/block:Video}
+
+		<BR>
+		
+		{block:RebloggedFrom}
+		<a href="{ReblogParentURL}"><img src="{ReblogParentPortraitURL-16}"></a>
+		<i class="fa fa-retweet"></i> Reblogged from <a href="{ReblogParentURL}" class="">{ReblogParentName}</a>
+		<br>
+		{/block:RebloggedFrom}
+
+	</div>
+
+
+	<!-- Post Note -->
+	 {block:NoteCount}
+	 <BR>
+	   <h4>{NoteCount} Notes</h4>
+		{block:PostNotes}
+ 			{PostNotes}
+		{/block:PostNotes}
+	{/block:NoteCount}
+	
+		</div>
+	<!-- END col-lg-12 -->
+		<BR><BR>
+	{/block:Posts}
+ 
+	</div>
+<!-- End Post-text-NormalList --> 
+
+{/block:PermalinkPage}
+
+
+<!-- Footer. please do not delete. --> 
+    <footer id="footer" class="text-right">
+      <a href="http://dot-web.tumblr.com/" target="_blank">Cathedral-Moon</a> designed by <a href="http://triste.undo.jp/" target="_blank">-273℃</a>
+    </footer>
+    
+
+</div>      <!-- End Container -->
+
+<p class="pagetop hidden-sm hidden-xs"><a href="#">▲</a></p>
+
+<script src="http://273c.github.io/template/tumblr-theme/js/cathedral.js"></script>
+
+{block:IfInfiniteScroll}
+<!-- infinite scroll -->
+<script type="text/javascript">
+$('#postblock').infinitescroll({
+        navSelector  : 'ul.pager',
+        nextSelector : 'ul.pager a#scroll',
+        itemSelector : '#postblock #post',
+        behavior     : 'twitter',
+        loading: {
+          finishedMsg: "end posts",
+          img: '',
+          msgText: ""
+        }   
+    });
+</script>
+{/block:IfInfiniteScroll}
+
+</body>
+</html>
