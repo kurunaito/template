@@ -21,9 +21,6 @@ Tumblrカスタマイズページの下部にある、「**詳細設定**」へ�
 ####リンク色変更
 `a { color:好きな色コード;}`  
 
-####記事ブロック背景色変更
-`.row {background-color: 好きな色コード;}`  
-
 ####見出しタイトルの背景色/背景画像変更
 `h1,h2{background-color:色コード;background-image:url("アドレス");}`  
 
