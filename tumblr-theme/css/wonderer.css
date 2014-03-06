@@ -45,8 +45,6 @@ body#wide .container, body#wide .container-fluid{
 	background-color:#fff;
 }
 body#wide .row{
-	margin-right:auto;
-	margin-left:auto;
 	padding:10px;
 	border-radius: 0px;
 	background-color:#fff;
@@ -167,7 +165,8 @@ h3{
 }
 
 body#wide .col-lg-12{
-	margin:0 auto;
+	margin-right:auto;
+	margin-left:auto;
     width: 920px;
     padding-bottom:10px;
 }
