@@ -166,8 +166,8 @@ h3{
 }
 
 body#wide .col-lg-12{
-	margin:35%;
-    width: 55%;
+	margin-left: 20%;
+    width: 60%;
     padding-bottom:10px;
 }
 @media screen and (max-width: 768px) {
