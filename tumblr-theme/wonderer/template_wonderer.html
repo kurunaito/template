@@ -436,8 +436,8 @@
 			<div class="col-lg-4">
 				{block:IfInfoBookImage} <a href="{image:Info Book}"><img src="{image:Info Book}" class="img-responsive center-block"></a><BR> {/block:IfInfoBookImage}
 				{block:IfNotInfoBookImage}<div class="nowprinting center-block hidden-sm hidden-xs"> </div>{/block:IfNotInfoBookImage}
-				{block:IfInfoSampleURL}<button type="button" class="btn btn-default btn-lg btn-block" href="{text:Info Sample URL}">本文サンプル</button>{/block:IfInfoSampleURL}
-				{block:IfInfoNoveltyImage}<button type="button" class="btn btn-default btn-lg btn-block" href="{image:Info Novelty}">ノベルティイメージ</button>{/block:IfInfoNoveltyImage}
+				{block:IfInfoSampleURL}<a class="btn btn-default btn-lg btn-block" href="{text:Info Sample URL}" role="button">本文サンプル</a>{/block:IfInfoSampleURL}
+				{block:IfInfoNoveltyImage}<a class="btn btn-default btn-lg btn-block" href="{image:Info Novelty}" role="button">ノベルティイメージ</a>{/block:IfInfoNoveltyImage}
 			</div>
 			<div class="col-lg-8 padding">
 			<dl >
