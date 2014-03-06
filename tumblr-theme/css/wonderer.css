@@ -45,6 +45,7 @@ body#wide .container, body#wide .container-fluid{
 	background-color:#fff;
 }
 body#wide .row{
+	margin:0 auto;
 	padding:10px;
 	border-radius: 0px;
 	background-color:#fff;
@@ -165,9 +166,8 @@ h3{
 }
 
 body#wide .col-lg-12{
-	margin-right:auto;
-	margin-left:auto;
-    width: 920px;
+	margin:0 auto;
+    width: 55%;
     padding-bottom:10px;
 }
 @media screen and (max-width: 768px) {
