@@ -45,7 +45,8 @@ body#wide .container, body#wide .container-fluid{
 	background-color:#fff;
 }
 body#wide .row{
-	margin:0 auto;
+	margin-right:auto;
+	margin-left:auto;
 	padding:10px;
 	border-radius: 0px;
 	background-color:#fff;
