@@ -20,6 +20,9 @@ hr {
 body#wide .row{
 	background-color:transparent;
 }
+body#wide .col-lg-12{
+    background-color:transparent;
+}
 table {
   background-color: transparent;
 }
