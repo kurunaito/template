@@ -1,4 +1,4 @@
-![]()
+![](https://31.media.tumblr.com/1bced828fc89ebc9f1e40fa527ec9faa/tumblr_inline_n2004r9HHM1sal4rt.png)
   
 #Introduction
 アンソロやろうぜー！ってなったときに、クソ忙しい事務連絡時期にはたと気づく。  
@@ -16,7 +16,6 @@
 
 ###Custom CSS Swatch
 * [**Black.css DEMO**](http://wonderer-demo.tumblr.com/black)  
-* [**Horizon.css DEMO**](http://)  
 このモードは**custom-memberlist.md**の「Custom CSS Swatch」の欄を見てください。  
 cssをテーマのタグに追加することで利用することが出来ます。  
 

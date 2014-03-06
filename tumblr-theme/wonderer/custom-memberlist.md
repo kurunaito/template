@@ -21,14 +21,11 @@ Tumblrカスタマイズページの下部にある、「**詳細設定**」へ�
 ####リンク色変更
 `a { color:好きな色コード;}`  
 
-####記事ブロック背景色変更
-`.row {background-color: 好きな色コード;}`  
-
 ####見出しタイトルの背景色/背景画像変更
 `h1,h2{background-color:色コード;background-image:url("アドレス");}`  
 
 ####ページトップに戻るリンクの背景色変更（PC表示のみ）
-`.pagetop a {background-color: 好きな色コード;}`  
+`.pagetop a#pagetopscroll {background-color: 好きな色コード;}`  
 
 #Member List
 テキスト投稿での崩れない執筆者一覧の作り方です。 コピペして、アドレスなどを書きくわえて使用してください。  
