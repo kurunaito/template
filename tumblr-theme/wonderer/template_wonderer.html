@@ -160,7 +160,7 @@
 <div class="alert alert-danger">
 	<H2>Author Check Mode -Danger-</H2>
 	この機能は<em>主に「アンソロジー発行」に必要な最低限の情報</em>の入力不備などをチェックするためにオンになっています。<BR>
-	以下の設定項目をチェックして、必須入力項目を埋めていくと自動的に項目が消えます。<BR>
+	プレビュー画面横の設定項目をチェックして、必須入力項目を埋めていくと自動的に項目が消えます。<BR>
 	<strong>尚、このモードは公開前に必ずカスタマイズ画面より「Author Check Mode」のスイッチをオフにしてください。<BR>
 		警告パネルと注意パネルが消えます。（このアラート表示は、オンになっている場合管理人以外にも見えます。）</strong><BR>
 	また、スマートフォンでの表示確認は実機、または<a href="javascript:void((function(d){if(self!=top||d.getElementById('toolbar'))return false;d.write('<!DOCTYPE HTML><html style=&quot;opacity:0;&quot;><head><meta charset=&quot;utf-8&quot;/></head><body><a data-viewport=&quot;320x480&quot; data-icon=&quot;mobile&quot;>Mobile (e.g. Apple iPhone)</a><a data-viewport=&quot;320x568&quot; data-icon=&quot;mobile&quot; data-version=&quot;5&quot;>Apple iPhone 5</a><a data-viewport=&quot;600x800&quot; data-icon=&quot;small-tablet&quot;>Small Tablet</a><a data-viewport=&quot;768x1024&quot; data-icon=&quot;tablet&quot;>Tablet (e.g. Apple iPad 2-3rd, Mini)</a><a data-viewport=&quot;1280x800&quot; data-icon=&quot;notebook&quot;>Widescreen</a><script src=&quot;http://lab.maltewassermann.com/viewport-resizer/resizer.min.js&quot;></script></body></html>')})(document));">ここ</a>を使って各デバイスごとの動きを確認してください。<BR>
@@ -460,7 +460,7 @@
 			<dt>発行日{block:IfInfoEvent}/イベント{/block:IfInfoEvent}</dt>
 			<dd>{text:Info Date}{block:IfInfoEvent} / {text:Info Event}{/block:IfInfoEvent}</dd>
 			{block:IfInfoPrice}<dt>価格</dt>
-			<dd>{text:Info Price}円</dd>{/block:IfInfoPrice}
+			<dd>{text:Info Price}円</dd>{\block:IfInfoPrice}
 			</dl>
 			<BR>
 				
@@ -639,7 +639,7 @@
 
 <!-- Footer. please do not delete. --> 
     <footer id="footer" class="text-center">
-     Anthology Theme <a href="http://dot-web.tumblr.com/" target="_blank">Wonderer</a> designed by <a href="http://triste.undo.jp/" target="_blank">竜原/-273℃</a>
+     Theme <a href="http://dot-web.tumblr.com/" target="_blank">Wonderer</a> designed by <a href="http://triste.undo.jp/" target="_blank">竜原/-273℃</a>
     </footer>
     
   </div>      <!-- End Container -->

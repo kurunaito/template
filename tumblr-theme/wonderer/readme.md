@@ -21,8 +21,13 @@
 cssをテーマのタグに追加することで利用することが出来ます。  
 
 #Download
-**[ここ](https://raw.github.com/273c/template/master/tumblr-theme/wonderer/template_wonderer.html)**をコピーして、タンブラーのカスタマイズ画面にそのままペースト。  
+* **[テーマダウンロード](https://raw.github.com/273c/template/master/tumblr-theme/wonderer/template_wonderer.html)**  
+コピーして、タンブラーのカスタマイズ画面にそのままペースト。  
 プレビューでCSSが反映されていなくても、保存するとちゃんと反映されます。  
+* [設定項目と管理人チェックモードについて](https://github.com/273c/template/blob/master/tumblr-theme/wonderer/customize.md)
+* [カスタムＣＳＳとメンバーリスト作成方法について](https://github.com/273c/template/blob/master/tumblr-theme/wonderer/custom-memberlist.md)  
+これらの項目も使用の際には必ず必要な情報となりますので、読んでいただければ幸いです。  
+
 **必ず「詳細設定」の「モバイルレイアウトを使用する」をオフにしてください。**  
 **また、公開するときには「Author Check Mode」のスイッチをオフにしてください。**
 
@@ -50,10 +55,13 @@ cssをテーマのタグに追加することで利用することが出来ま�
 注意：二次創作BL小説サイトです。
 * [Twitter : @tatuhara](https://twitter.com/tatuhara)
 * [webdesign tumblr : dot-web](http://dot-web.tumblr.com/)  
+* 273c@shower.rash.jp   
+特殊なカスタマイズ依頼や何か分からないことがあれば、メールアドレスかツイッターアカウントまで。  
 
 二次配布などを禁止し、またこのテーマを利用して起こったあらゆる被害・損害についての責任は一切負いません。
 
 #Version  
-* **Ver 1.0 (2014/03/08)**  
-とりあえず満を持してアレ。
+* **Ver 1.0 (2014/03/07)**  
+とりあえず満を持してアレ。  
+不具合や改善などありましたらお気軽にご連絡ください。
 
