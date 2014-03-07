@@ -9,6 +9,7 @@
 
 ##Black.css
 [DEMO](http://wonderer-demo.tumblr.com/black)  
+色調反転のブラックバージョン。背景色を設定画面から変えることで、濃い配色のサイトにも出来ます。  
 
 * css  
 `<link href ="http://273c.github.io/template/tumblr-theme/css/wonderer-black.css" rel="stylesheet">`  
