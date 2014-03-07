@@ -360,7 +360,7 @@
 	{/block:IfHeaderAnthologyTitle}
 	
 	{block:IfNotHeaderImage}
-	<div class="text-center padding">
+	<div class="jumbotron text-center">
 		{block:IfWideMode}{block:IfNotHeaderImage}<BR><BR>{/block:IfNotHeaderImage}{/block:IfWideMode}
  	<h1>{text:Anthology Title}</h1>
 	</div>
@@ -388,6 +388,14 @@
 
 
 <!-- information -->
+{block:IfNotTwitterAccount}
+<div class="col-lg-12 text-center padding">
+{Description}
+</div>
+{/block:IfNotTwitterAccount}
+
+
+	{block:IfTwitterAccount}
       <div class="col-lg-8">
       	 <p style="font-size:0.9em;" class="padding">
       	 <!-- Description -->
@@ -404,16 +412,18 @@
        </div>
       <div class="col-lg-4 text-center padding">
       	{block:IfNotTwitterWidgetID}
-      	<img src="{PortraitURL-128}" class="img-rounded hidden-sm hidden-xs center-block" width="110"><BR><BR>
-  		{block:IfTwitterAccount}<a class="btn btn-default" href="https://twitter.com/{text:Twitter Account}" data-toggle="tooltip" data-placement="bottom" title="Follow me!"><i class="fa fa-twitter  fa-lg"></i> {text:Twitter Account}</a>{/block:IfTwitterAccount}<BR>
+      	<a href="https://twitter.com/{text:Twitter Account}"><img src="http://www.paper-glasses.com/api/twipi/{text:Twitter Account}/original" class="img-rounded hidden-sm hidden-xs center-block" width="100px"><BR><BR>
+  		<a class="btn btn-default" href="https://twitter.com/{text:Twitter Account}" data-toggle="tooltip" data-placement="bottom" title="Follow me!"><i class="fa fa-twitter  fa-lg"></i> {text:Twitter Account}</a><BR>
       	{/block:IfNotTwitterWidgetID}
       	
       	{block:IfTwitterWidgetID}
       	<a class="twitter-timeline" href="https://twitter.com/{text:Twitter Account}" data-widget-id="{text:Twitter Widget ID}" data-chrome="noheader nofooter transparent noborders" height="{text:Twitter Widget Height}px">@{text:Twitter Account}からのツイート</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		{/block:IfTwitterWidgetID}
-       
        </div>
+	{/block:IfTwitterAccount}
+       
+       
       </div>
 	</div>
 <!-- information -->
@@ -449,8 +459,8 @@
 			<dd>{text:Info Detail}</dd>
 			<dt>発行日{block:IfInfoEvent}/イベント{/block:IfInfoEvent}</dt>
 			<dd>{text:Info Date}{block:IfInfoEvent} / {text:Info Event}{/block:IfInfoEvent}</dd>
-			<dt>価格</dt>
-			<dd>{text:Info Price}円</dd>
+			{block:IfInfoPrice}<dt>価格</dt>
+			<dd>{text:Info Price}円</dd>{\block:IfInfoPrice}
 			</dl>
 			<BR>
 				
